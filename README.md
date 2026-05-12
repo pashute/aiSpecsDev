@@ -1,0 +1,2 @@
+# aiSpecsDev
+Specification Driven Development
