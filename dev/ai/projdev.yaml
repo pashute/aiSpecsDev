@@ -1,2 +1,70 @@
-# Document name: projdev
+```yaml
+# Filename: projdev.yaml
 # Version: 0.90
+# Updated at: feature start, item open, commit/push, item close, feature end.
+
+# repo
+project:
+  owner:        # github username
+  repo:         # repository name
+
+# project management (github project board)
+projman:
+  num:          # project number (typically single digit)
+  url:          # https://github.com/users/<owner>/projects/<num>
+
+# feature (gitflow)
+feature:
+  name:         # e.g. myfeature
+  branch:       # e.g. feature/myfeature
+
+# active item hierarchy
+# head_item: top ancestor. empty if active_item has no ancestor.
+head_item:
+  number:
+  id:
+  url:          # https://github.com/<owner>/<repo>/issues/<number>
+  title:
+  status:
+
+# parent_item: immediate parent. empty if active_item has no parent.
+parent_item:
+  number:
+  id:
+  url:
+  title:
+  status:
+
+# active_item: current item being worked on.
+active_item:
+  number:
+  id:
+  url:
+  title:
+  status:
+
+# commits: log of all commits in this feature.
+#   each commit has: id, headline, details[], filechanges[]
+#     each filechange has: filename, path, changes[]
+#   details and changes are free text lines
+#   example detail:  "line 23. added missing initialization"
+#   example change:  "line 44. removed redundant section"
+commits:
+  - id:
+    headline:
+    details:
+      - ""
+    filechanges:
+      - filename:
+        path:
+        changes:
+          - ""
+
+# completed_items: closed items in this feature.
+# each item has: id, title, status, remarks
+completed_items:
+  - id:
+    title:
+    status:
+    remarks:
+```
