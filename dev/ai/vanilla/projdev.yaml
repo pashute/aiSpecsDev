@@ -1,0 +1,57 @@
+```yaml
+# Filename: projdev.yaml
+# Version: 1.0
+# Updated at: feature start, item open, commit/push, item close, feature end.
+
+# repo
+project:
+  owner:
+  repo:
+
+# project management (github project board)
+projman:
+  id:
+  name:
+  uid:
+  url:
+
+# feature (gitflow)
+feature:
+  name:
+  branch:
+  item:
+    id:
+    title:
+    url:
+    state:
+    stage:
+    milestone:
+    date:
+
+# active_item: current item being worked on.
+active_item:
+  id:
+  title:
+  url:
+  state:
+  stage:
+  milestone:
+  date:
+  subtasks:
+
+# parent_item: immediate parent. empty if active_item is the feature item itself
+parent_item:
+  id:
+  title:
+  url:
+  state:
+  stage:
+  milestone:
+  date:
+
+# commits: log of all commits in this feature.
+commits:
+
+# completed_items: closed items in this feature.
+completed_items:
+```

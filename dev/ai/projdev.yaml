@@ -10,10 +10,10 @@ project:
 
 # project management (github project board)
 projman:
-  id:          # project number (typically single digit)
-  name:        # project name
-  uid:         # project uid
-  url:         # https://github.com/users/<owner>/projects/<num>
+  id: 5
+  name:
+  uid: PVT_kwHOABsSM84BXhNk
+  url: https://github.com/users/pashute/projects/5
 
 # feature (gitflow)
 feature:

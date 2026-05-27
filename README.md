@@ -3,6 +3,16 @@
 Feature and subtask based development with Copilot
 A template to add to any Visual Studio project running with a powershell terminal
 
+## User Guide
+1. Installation: This project will be turned into a development initiator that sets itself up into an existing repo, with instructions for AI. Once that is done we will supply installation instructions. 
+2. The installation will set up your project as a gitflow project with branches for development and features. 
+3. Create Project development feature items: (A Github Project issue for each feature)
+4. Create feature items (Github Project subissues of the feature)
+5. Create item steps by commenting - [ ] checkboxes in the item's description and comments. 
+6. Ask copilot to read the instructions. Tell it to create the feature (by giving it a link to the feature in Github Project (the project should have the same name as the repo) or simply by giving it the feature name. and then walk it through the items. 
+7. From now on copilot reads and consults with you while developing feature by feature step by step. 
+8. It knows how and when to close an item and how to end a feature (after consulting you, of course) and leave a clear record of what was done. 
+
 ## AI instructions and dyanamic code
 
 - Instructions file:  `/dev/ai/instructions.md` file.

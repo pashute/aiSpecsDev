@@ -1,0 +1,4 @@
+## Filename: temp.txt
+## Version: 1.0
+
+Usage: Temporary file for AI workspace. Can be used for drafts, notes, or intermediate data.

@@ -34,28 +34,28 @@ Version: 0.93
 - [v] b4. show developer list of what files need to be corrected and how to update yaml correctly. 
 - [v] b5. update the yaml's feature item and subtasks. 
 - [v] b6. fix all. and then review that everything is unified nothing missing. finally, make a checkbox list of all fixes and have developer review. add into the list any questions you have
-- [ ] b7. commit and push without following the commit-push instructions (only this once). use msg:  feature/WriteSomeSpecs instruction fixes. And telegraphic list of files changed and why (3 words at most per file)
+- [v] b7. commit and push without following the commit-push instructions (only this once). use msg:  feature/WriteSomeSpecs instruction fixes. And telegraphic list of files changed and why (3 words at most per file)
 
 - d. addendum: Create aiCode functions for item/project details
 - [v] d1. Create aiCode/itemDetails.md with state, labels, milestone, closed reason
 - [v] d2. Create aiCode/projectSame.md - check project hasn't changed
 - [v] d3. Create aiCode/projectDetails.md - cache or fetch project field IDs
-- [ ] d4. Check that 1a is correct with inserting current feature number and name (while leaving yaml comments as is)
-- [ ] d5. Update yaml with current project details (num: 5, url: https://github.com/users/pashute/projects/5)
-- [ ] d6. Check if project numbers are listed elsewhere and move to projectDetails.md as remarks for hum&AI team
-- [ ] d7. Clean up references to point to aiCode files
+- [v] d4. Check that 1a is correct with inserting current feature number and name (while leaving yaml comments as is)
+- [v] d5. Update yaml with current project details (num: 5, url: https://github.com/users/pashute/projects/5)
+- [v] d6. Check if project numbers are listed elsewhere and move to projectDetails.md as remarks for hum&AI team
+- [v] d7. Clean up references to point to aiCode files
 
 - c. addendum:  update 1a with subitems search and record (in yaml).
-- [ ] check that developer is on same page. sees 1aStartFeature file
-- [ ] propose instruction text for subitem search in 2a: 
-  - [ ] this should include each input on a line and where its from 
-- [ ] propose aiCode filenames for any missing "functions" that are used in 1a.
-- [ ] upon ok do it, and get the developer's ok
+- [v] check that developer is on same page. sees 1aStartFeature file
+- [v] propose instruction text for subitem search in 2a: 
+  - [v] this should include each input on a line and where its from 
+- [v] propose aiCode filenames for any missing "functions" that are used in 1a.
+- [v] upon ok do it, and get the developer's ok
 
-- [ ] reminder: before each step, wait for developer's ok to proceed. 
-- [ ] 4. Update 2b.CloseProjdevItem with verification logic
-- [ ] 5. Update 2a.OpenProjdevItem.md with active item check
-- [ ] 6. Add file header description to all dynamAI files
+- [v] reminder: before each step, wait for developer's ok to proceed.
+- [v] 4. Update 2b.CloseProjdevItem with verification logic
+- [v] 5. Update 2a.OpenProjdevItem.md with active item check
+- [v] 6. Add file header description to all dynamAI files
 - [ ] 7. Move projdev.yaml update instructions to projdevUpdate.md
-- [ ] 8. Add variable notation explanation to instructions.md
-- [ ] 9. Check that all documents have header with two lines 
+- [v] 8. Add variable notation explanation to instructions.md
+- [v] 9. Check that all documents have header with two lines 

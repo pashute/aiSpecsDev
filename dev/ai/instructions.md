@@ -43,50 +43,54 @@ If it's in a code file that heading should be marked as a comment.
 - When developer referrs to dev branch check with them if they meant the `develop` branch. 
 - When the developer asks to check in, to close, to commit, or to push, please check if this means to both commit locally and push the code to the gitflow branch on github. In any case use the relevant parts of `/dev/ai/dynamAI/3.CommitAndPush` so that every commit has a projdev item and a comprehensive list of changes, and the item has a comprehensive short list of commits and changes. 
 
-## 5. PowerShell Commands and Web Calls
-- 5.1 Before any PowerShell command or web call: announce in the AI chat what you are doing and why
-- 5.2 After any PowerShell command or web call: report in the AI chat what was accomplished (or not)
+## 5. Variable notation
+{varname} indicates a variable whose value is either known from projdev.yaml or retrieved through a PowerShell command.
+Examples: {owner}, {repo}, {featurename}, {projectID}, {itemnum}
 
-## 6. Workflow
+## 6. PowerShell Commands and Web Calls
+- 6.1 Before any PowerShell command or web call: announce in the AI chat what you are doing and why
+- 6.2 After any PowerShell command or web call: report in the AI chat what was accomplished (or not)
+
+## 7. Workflow
 
 ── once per feature ──
-### 6.1 Start Feature → dev/ai/dynamAI/1a.StartFeature.dynai.md
+### 7.1 Start Feature → dev/ai/dynamAI/1a.StartFeature.dynai.md
   This updates projdev.yaml and steps.md if there are any steps in the feature projdev item. 
   We should now have the project and feature details. 
 
 ── loop per item ──
-### 6.2 Open Item → dev/ai/dynamAI/2a.OpenItem.md
-   - 6.2.1 Trigger `Start Feature`  if no feature is listed.
-   - 6.2.2 Run `dyanmai/Open Item` with requested item url. 
+### 7.2 Open Item → dev/ai/dynamAI/2a.OpenItem.md
+   - 7.2.1 Trigger `Start Feature`  if no feature is listed.
+   - 7.2.2 Run `dyanmai/Open Item` with requested item url. 
           This updates projdev.yaml and steps.md with what should be done.
-   - 6.2.2 Read projdev.yaml. Review item title, steps, and scope with developer.
-   - 6.2.3 Reminder:  Never assume. Never self-confirm.
+   - 7.2.3 Read projdev.yaml. Review item title, steps, and scope with developer.
+   - 7.2.4 Reminder:  Never assume. Never self-confirm.
 
-### 6.3 Do Steps
-   - 6.3.1 Work through steps.md one at a time.
-   - 6.3.2 Before each step: one-line summary of what you're about to do. Wait for ok.
-   - 6.3.3 Update steps.md status marks as you go.
-   - 6.3.4 Flag scope creep immediately. Ask whether to open a new item.
+### 7.3 Do Steps
+   - 7.3.1 Work through steps.md one at a time.
+   - 7.3.2 Before each step: one-line summary of what you're about to do. Wait for ok.
+   - 7.3.3 Update steps.md status marks as you go.
+   - 7.3.4 Flag scope creep immediately. Ask whether to open a new item.
 
-### 6.4 Commit and Push → dev/ai/dynamAI/3.Commit.md
-   - 6.4.1 Trigger: developer says "commit".
-   - 6.4.2 Only files relevant to active item.
-   - 6.4.3 Out-of-scope files: list them, ask explicit approval.
+### 7.4 Commit and Push → dev/ai/dynamAI/3.Commit.md
+   - 7.4.1 Trigger: developer says "commit".
+   - 7.4.2 Only files relevant to active item.
+   - 7.4.3 Out-of-scope files: list them, ask explicit approval.
 
-### 6.5 Close Item → dev/ai/dynamAI/2b.CloseItem.md
-   - 6.5.1 Only after all steps done OR developer explicitly requests.
-   - 6.5.2 Close only after developer says ok.
+### 7.5 Close Item → dev/ai/dynamAI/2b.CloseItem.md
+   - 7.5.1 Only after all steps done OR developer explicitly requests.
+   - 7.5.2 Close only after developer says ok.
 ── end loop ──
 
-### 6.6 End Feature → dev/ai/dynamAI/1b.EndFeature.md
-   - 6.6.1 Propose only after all items closed.
-   - 6.6.2 Do nothing until developer confirms.
+### 7.6 End Feature → dev/ai/dynamAI/1b.EndFeature.md
+   - 7.6.1 Propose only after all items closed.
+   - 7.6.2 Do nothing until developer confirms.
 
-## 7. Step status marks (in steps.md)
+## 8. Step status marks (in steps.md)
 [v] done · [!] problem · [-] deferred/cancelled (add reason)
 
 
-## 8. Dynamai instructions
+## 9. Dynamai instructions
 _dynameAI files contain instruction sequences for the AI, using natural language pseudocode._
 - 8.1 Before each step announce in the AI chat: <dynamAI name>, <step number>, and <step name>
 - 8.2 

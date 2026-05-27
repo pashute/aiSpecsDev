@@ -40,3 +40,7 @@ gh api graphql -f query='query($id: ID!) { node(id: $id) { ... on ProjectV2 { fi
 - Check if project details exist in projdev.yaml projman section
 - If exists and projectSame returns true, use cached values
 - If not, fetch new values and store in projdev.yaml
+
+### Remarks for human/AI team
+- Current project UID: PVT_kwHOABsSM84BXhNk
+- This UID is constant for this project and should be cached in projdev.yaml projman.uid
