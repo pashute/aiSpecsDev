@@ -32,8 +32,9 @@ $projectUID = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}"
 $projectNumber = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemnum} --jq '.data.repository.issue.projectItems.nodes[0].project.number'
 $projectTitle = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemnum} --jq '.data.repository.issue.projectItems.nodes[0].project.title'
 
-# Get project field UIDs (tested by developer)
-gh api graphql -f query='query($id: ID!) { node(id: $id) { ... on ProjectV2 { fields(first: 20) { nodes { ... on ProjectV2SingleSelectField { id dataType name options { id name } } } } } } }' -f id={projectID}
+# Get field UIDs of project 
+## (among them the project status, and its enumerated options: backlog, in-progress etc.)
+gh api graphql -f query='query($id: ID!) { node(id: $id) { ... on ProjectV2 { fields(first: 20) { nodes { ... on ProjectV2SingleSelectField { id dataType name options { id name } } } } } } }' -f id={projectUID}
 ```
 
 ### AI instruction for caching

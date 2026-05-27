@@ -63,15 +63,70 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
-  - id:
-    headline:
+  - id: b7c67ba
+    headline: feature/WriteSomeSpecs instruction refinements
     details:
-      - ""
+      - "Created isFeatureItem.md for feature item validation"
+      - "Updated projdevUpdate.md with aiCode references"
+      - "Updated 1a.StartFeature.md to use isFeatureItem.md"
+      - "Updated 2a.OpenProjdevItem.md with subitem search instructions"
+      - "Updated 2b.CloseProjdevItem.md with verification logic"
+      - "Added variable notation section to instructions.md"
+      - "Renumbered sections in instructions.md"
+      - "Added project UID to projdev.yaml"
+      - "Marked steps complete in steps.md"
+      - "Added vanilla template files"
+      - "User added user guide to README.md"
     filechanges:
-      - filename:
-        path:
+      - filename: README.md
+        path: README.md
         changes:
-          - ""
+          - "Added user guide section"
+      - filename: isFeatureItem.md
+        path: dev/ai/dynamAI/aiCode/isFeatureItem.md
+        changes:
+          - "Created new file"
+      - filename: projdevUpdate.md
+        path: dev/ai/dynamAI/projdevUpdate.md
+        changes:
+          - "Added aiCode references"
+      - filename: 1a.StartFeature.md
+        path: dev/ai/dynamAI/1a.StartFeature.md
+        changes:
+          - "Updated to use isFeatureItem.md"
+      - filename: 2a.OpenProjdevItem.md
+        path: dev/ai/dynamAI/2a.OpenProjdevItem.md
+        changes:
+          - "Added subitem search instructions"
+      - filename: 2b.CloseProjdevItem.md
+        path: dev/ai/dynamAI/2b.CloseProjdevItem.md
+        changes:
+          - "Added verification logic"
+      - filename: instructions.md
+        path: dev/ai/instructions.md
+        changes:
+          - "Added variable notation section"
+          - "Renumbered sections"
+      - filename: projdev.yaml
+        path: dev/ai/projdev.yaml
+        changes:
+          - "Added project UID"
+      - filename: steps.md
+        path: dev/ai/steps.md
+        changes:
+          - "Marked steps complete"
+      - filename: temp.txt
+        path: dev/ai/vanilla/temp.txt
+        changes:
+          - "Created template file"
+      - filename: steps.md
+        path: dev/ai/vanilla/steps.md
+        changes:
+          - "Created template file"
+      - filename: projdev.yaml
+        path: dev/ai/vanilla/projdev.yaml
+        changes:
+          - "Created template file"
 
 # completed_items: closed items in this feature.
 # each item has: id, title, status, remarks
