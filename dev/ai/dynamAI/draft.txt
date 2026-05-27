@@ -1,0 +1,59 @@
+```powershell
+# inputs
+$owner = "{owner}"      # e.g. = "pashute"
+$repo = "{repo}"        # e.g. = "aiSpecsDev"
+$itemnum = {itemnum}    # e.g. 4
+
+
+# ------------------------------------------------------------
+# generic workflow-stage option ids
+# these are the target values for the Status field
+# ------------------------------------------------------------
+$stageBacklogID    = "f75ad846"   # Backlog
+$stageReadyID      = "08afe404"   # Ready
+$stageInProgressID = "47fc9ee4"   # In progress
+$stageInReviewID   = "4cc61d42"   # In review
+$stageDoneID       = "98236657"   # Done
+
+
+# ------------------------------------------------------------
+# get project item id, project id, project title, project number
+# from the issue's single project item
+# this works when the issue belongs to exactly one relevant project item
+# ------------------------------------------------------------
+$queryProjectItem = 'query($owner:String!, $name:String!, $number:Int!) { repository(owner:$owner, name:$name) { issue(number:$number) { projectItems(first:1) { nodes { id project { id title number } } } } } }'
+
+$projectItemId = gh api graphql -f query=$queryProjectItem -f owner=$owner -f name=$repo -f number=$itemnum --jq '.data.repository.issue.projectItems.nodes[0].id'
+$projectId = gh api graphql -f query=$queryProjectItem -f owner=$owner -f name=$repo -f number=$itemnum --jq '.data.repository.issue.projectItems.nodes[0].project.id'
+$projectTitle = gh api graphql -f query=$queryProjectItem -f owner=$owner -f name=$repo -f number=$itemnum --jq '.data.repository.issue.projectItems.nodes[0].project.title'
+$projectNumber = gh api graphql -f query=$queryProjectItem -f owner=$owner -f name=$repo -f number=$itemnum --jq '.data.repository.issue.projectItems.nodes[0].project.number'
+
+
+# ------------------------------------------------------------
+# get the Status field id from the project
+# projectId is passed as a variable with -f
+# this avoids quote problems inside the GraphQL body
+# ------------------------------------------------------------
+$queryStageField = 'query($id: ID!) { node(id: $id) { ... on ProjectV2 { fields(first: 20) { nodes { ... on ProjectV2SingleSelectField { id dataType name options { id name } } } } } } }'
+
+$stageID = gh api graphql -f query=$queryStageField -f id=$projectId --jq '.data.node.fields.nodes[] | select(.name=="Status") | .id'
+
+
+# ------------------------------------------------------------
+# generic mutation to set workflow-stage / Status
+# pass all values separately with -f
+# ------------------------------------------------------------
+$mutationSetStage = 'mutation($projectId:ID!, $itemId:ID!, $fieldId:ID!, $optionId:String!) { updateProjectV2ItemFieldValue(input: { projectId: $projectId, itemId: $itemId, fieldId: $fieldId, value: { singleSelectOptionId: $optionId } }) { projectV2Item { id } } }'
+
+
+# ------------------------------------------------------------
+# move item to In progress
+# ------------------------------------------------------------
+gh api graphql -f query=$mutationSetStage -f projectId=$projectId -f itemId=$projectItemId -f fieldId=$stageID -f optionId=$stageInProgressID
+
+
+# ------------------------------------------------------------
+# move item to Done
+# ------------------------------------------------------------
+gh api graphql -f query=$mutationSetStage -f projectId=$projectId -f itemId=$projectItemId -f fieldId=$stageID -f optionId=$stageDoneID
+```

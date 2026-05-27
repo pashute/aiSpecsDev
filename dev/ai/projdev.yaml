@@ -1,47 +1,60 @@
 ```yaml
 # Filename: projdev.yaml
-# Version: 0.90
+# Version: 0.91
 # Updated at: feature start, item open, commit/push, item close, feature end.
 
 # repo
 project:
-  owner:        # github username
-  repo:         # repository name
+  owner: pashute
+  repo: aiSpecsDev
 
 # project management (github project board)
 projman:
-  num:          # project number (typically single digit)
-  url:          # https://github.com/users/<owner>/projects/<num>
+  id:          # project number (typically single digit)
+  name:        # project name
+  uid:         # project uid
+  url:         # https://github.com/users/<owner>/projects/<num>
 
 # feature (gitflow)
 feature:
   name:         # e.g. myfeature
   branch:       # e.g. feature/myfeature
-
-# active item hierarchy
-# head_item: top ancestor. empty if active_item has no ancestor.
-head_item:
-  number:
-  id:
-  url:          # https://github.com/<owner>/<repo>/issues/<number>
-  title:
-  status:
-
-# parent_item: immediate parent. empty if active_item has no parent.
-parent_item:
-  number:
-  id:
-  url:
-  title:
-  status:
+  item:         # the feature item (parent issue)
+    id: 2        # issue number, not uid
+    title: feature/WriteSomeSpecs
+    url: https://github.com/pashute/aiSpecsDev/issues/2
+    state: open
+    stage:         # should be In-progress.
+    milestone:
+    date:
 
 # active_item: current item being worked on.
 active_item:
-  number:
+  id: 2         # issue number, not uid
+  title: feature/WriteSomeSpecs
+  url: https://github.com/pashute/aiSpecsDev/issues/2
+  state: open
+  stage:         # workflow stage
+  milestone:
+  date:
+  subtasks: 
+  - id: 7 title: "" url: "" state: "" stage: "" milestone: "" date: ""
+  - id: 5 title: "" url: "" state: "" stage: "" milestone: "" date: ""
+  - id: 3 title: "" url: "" state: "" stage: "" milestone: "" date: ""
+  - id: 6 title: "" url: "" state: "" stage: "" milestone: "" date: ""
+  - id: 4 title: "" url: "" state: "" stage: "" milestone: "" date: ""
+
+# parent_item: immediate parent. empty if active_item is the feature item itself
+parent_item:
   id:
-  url:
   title:
-  status:
+  url:
+  state:
+  stage:
+  milestone:
+  date: 
+
+
 
 # commits: log of all commits in this feature.
 #   each commit has: id, headline, details[], filechanges[]
