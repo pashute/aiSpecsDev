@@ -37,7 +37,8 @@ active_item:
   stage:         # workflow stage
   milestone:
   date:
-  subtasks: 
+  itemsteps: []
+  subtasks:
   - id: 7 title: "" url: "" state: "" stage: "" milestone: "" date: ""
   - id: 5 title: "" url: "" state: "" stage: "" milestone: "" date: ""
   - id: 3 title: "" url: "" state: "" stage: "" milestone: "" date: ""
@@ -127,6 +128,153 @@ commits:
         path: dev/ai/vanilla/projdev.yaml
         changes:
           - "Created template file"
+  - id: 2889cc2
+    headline: feature/WriteSomeSpecs bell and accessibility improvements
+    details:
+      - "Added bell sound accessibility instructions"
+      - "Added 3-beep attention notification"
+      - "Updated commit dynamAI with format refactoring"
+      - "Created format files for commit/item/project"
+      - "Created aiCode files for item operations"
+      - "Cleaned up redundant schema files"
+    filechanges:
+      - filename: instructions.md
+        path: dev/ai/instructions.md
+        changes:
+          - "Added sections 6.3, 6.4"
+          - "Updated version to 0.95"
+      - filename: steps.md
+        path: dev/ai/steps.md
+        changes:
+          - "Marked steps 10.1-10.3 complete"
+          - "Added bell command reference"
+      - filename: 3.CommitAndPush.md
+        path: dev/ai/dynamAI/3.CommitAndPush.md
+        changes:
+          - "Updated step 1 title"
+          - "Moved template to format file"
+          - "Added commit/push verification instructions"
+      - filename: projdevUpdate.md
+        path: dev/ai/dynamAI/projdevUpdate.md
+        changes:
+          - "Updated status symbols"
+          - "Updated schema reference"
+      - filename: format.commit.md
+        path: dev/ai/dynamAI/formats/format.commit.md
+        changes:
+          - "Created new format file"
+          - "Added file grouping instructions"
+      - filename: format.itemClose.md
+        path: dev/ai/dynamAI/formats/format.itemClose.md
+        changes:
+          - "Created new format file"
+      - filename: format.projdev.md
+        path: dev/ai/dynamAI/formats/format.projdev.md
+        changes:
+          - "Created new format file"
+      - filename: itemClose.md
+        path: dev/ai/dynamAI/aiCode/itemClose.md
+        changes:
+          - "Created new aiCode file"
+      - filename: itemParams.md
+        path: dev/ai/dynamAI/aiCode/itemParams.md
+        changes:
+          - "Created new aiCode file"
+      - filename: itemState.md
+        path: dev/ai/dynamAI/aiCode/itemState.md
+        changes:
+          - "Created new aiCode file"
+      - filename: subItemsClosed.md
+        path: dev/ai/dynamAI/aiCode/subItemsClosed.md
+        changes:
+          - "Created new aiCode file"
+      - filename: item.md
+        path: dev/ai/dynamAI/aiCode/item.md
+        changes:
+          - "Deleted redundant file"
+      - filename: projdevYaml.schema.md
+        path: dev/ai/dynamAI/aiCode/projdevYaml.schema.md
+        changes:
+          - "Deleted redundant file"
+      - filename: temp.txt
+        path: dev/ai/vanilla/temp.txt
+        changes:
+          - "Deleted temp file"
+      - filename: steps.md
+        path: dev/ai/vanilla/steps.md
+        changes:
+          - "Updated reader section"
+  - id: 62a3271
+    headline: feature/WriteSomeSpecs commit instruction refactoring
+    details:
+      - "Fixed format.projdev.md to clarify array structure"
+      - "Simplified projdevUpdate.md to reference format.projdev.md"
+      - "Eliminated redundancy between format and instructions"
+    filechanges:
+      - filename: format.projdev.md
+        path: dev/ai/dynamAI/formats/format.projdev.md
+        changes:
+          - "Fixed free multiline to multiline free-text"
+          - "Added array descriptions in parentheses"
+      - filename: projdevUpdate.md
+        path: dev/ai/dynamAI/projdevUpdate.md
+        changes:
+          - "Simplified to reference format.projdev.md"
+      - filename: steps.md
+        path: dev/ai/steps.md
+        changes:
+          - "Marked steps 19.1, 19.2 complete"
+  - id: ceac471
+    headline: feature/WriteSomeSpecs add here-string format and dynamAI terminology
+    details:
+      - "Created format.hereString.md with PowerShell here-string format specification"
+      - "Updated 2b.CloseProjdevItem.md to reference format.hereString.md"
+      - "Updated README.md to use dynamAI tasks terminology"
+      - "Updated all dynamAI files below 1.0 to version 1.0"
+      - "Cleaned up steps.md after previous commit"
+    filechanges:
+      - filename: format.hereString.md
+        path: dev/ai/dynamAI/formats/format.hereString.md
+        changes:
+          - "Created new format file"
+      - filename: 2b.CloseProjdevItem.md
+        path: dev/ai/dynamAI/2b.CloseProjdevItem.md
+        changes:
+          - "Replaced inline here-string instructions with reference to format file"
+          - "Version 1.0"
+      - filename: README.md
+        path: README.md
+        changes:
+          - "Updated terminology to dynamAI tasks (pronounced: dynamite tasks)"
+      - filename: 1a.StartFeature.md
+        path: dev/ai/dynamAI/1a.StartFeature.md
+        changes:
+          - "Version 1.0"
+      - filename: 1b.EndFeature.dynai.md
+        path: dev/ai/dynamAI/1b.EndFeature.dynai.md
+        changes:
+          - "Version 1.0"
+      - filename: 2a.OpenProjdevItem.md
+        path: dev/ai/dynamAI/2a.OpenProjdevItem.md
+        changes:
+          - "Version 1.0"
+      - filename: 3.CommitAndPush.md
+        path: dev/ai/dynamAI/3.CommitAndPush.md
+        changes:
+          - "Version 1.0"
+      - filename: projdevUpdate.md
+        path: dev/ai/dynamAI/projdevUpdate.md
+        changes:
+          - "Version 1.0"
+      - filename: instructions.md
+        path: dev/ai/instructions.md
+        changes:
+          - "Version 1.0"
+      - filename: steps.md
+        path: dev/ai/steps.md
+        changes:
+          - "Cleaned up completed steps"
+          - "Added new steps for here-string work"
 
 # completed_items: closed items in this feature.
 # each item has: id, title, status, remarks
