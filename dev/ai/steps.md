@@ -1,5 +1,6 @@
 Document name: steps
-Version: 0.93
+Version: 1.0
+Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [!] discuss
 
 - [v] 1. Create projdevUpdate.md dynamAI file
 - [v] 2. Update projdev.yaml according to projdevUpdate.md specs
@@ -56,6 +57,17 @@ Version: 0.93
 - [v] 4. Update 2b.CloseProjdevItem with verification logic
 - [v] 5. Update 2a.OpenProjdevItem.md with active item check
 - [v] 6. Add file header description to all dynamAI files
-- [ ] 7. Move projdev.yaml update instructions to projdevUpdate.md
+- [V] 7. Move projdev.yaml update instructions to projdevUpdate.md
 - [v] 8. Add variable notation explanation to instructions.md
-- [v] 9. Check that all documents have header with two lines 
+- [v] 9. Check that all documents have header with two lines
+- [v] 10. Check process correctness and discuss improvements
+- [v] 10.1 fix bell: in settins.json
+- [v] 10.2 check it works (command: [console]::Beep(800, 500))
+- [v] 10.3 restart vscode
+- [v] 10.4 ask copilot about the blue button and giving it permission so it wont ask again.
+- [v] 11. Use dynamAI instructions for all relevant requested actions from now.
+- [v] 12. Add single-change instruction to format.commit.md
+- [v] 12.1 Add new/removed file instructions to format.commit.md
+- [ ] 13. Commit using dynamAI instructions
+- [ ] 14. Show results to developer
+- [ ] 15. Close current item (follow dynamai)

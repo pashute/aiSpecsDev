@@ -60,10 +60,10 @@ go to 1b. End Feature dynamAI
 - Record telegraphic planned step content 
 
 ### On item step completed
-- Record steps.md step completion status ([-] deferred, [x] problem, [v] done, [?] discuss)
+- Record steps.md step completion status ([-] deferred, [x] cancelled, [V] no need, [v] done, [!] discuss)
 
 ### On Commit and Push
 - Log commit details in commits section
 
 ### Format
-- projdev.yaml schema and field explanations is listed in /dev/ai/dynameAI/aiCode/projdevYaml.schema.md
+- projdev.yaml schema and field explanations is listed in /dev/ai/dynamAI/formats/format.projdev.md

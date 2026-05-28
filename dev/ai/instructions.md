@@ -1,5 +1,5 @@
 Document name: instructions
-Version: 0.93
+Version: 0.95
 
 # AI Assistant Instructions
 
@@ -50,6 +50,8 @@ Examples: {owner}, {repo}, {featurename}, {projectID}, {itemnum}
 ## 6. PowerShell Commands and Web Calls
 - 6.1 Before any PowerShell command or web call: announce in the AI chat what you are doing and why
 - 6.2 After any PowerShell command or web call: report in the AI chat what was accomplished (or not)
+- 6.3 When reading instructions: remind user to go to accessibility settings (Ctrl+Shift+P, "open accessibility settings"), search for sound and change auto to on. Then try beep and ask developer if hears. Wait till bell sound is resolved.
+- 6.4 Whenever an action needing developer attention: beep 3 times (run [console]::Beep(800, 500) three times)
 
 ## 7. Workflow
 
@@ -92,10 +94,12 @@ Examples: {owner}, {repo}, {featurename}, {projectID}, {itemnum}
 
 ## 9. Dynamai instructions
 _dynameAI files contain instruction sequences for the AI, using natural language pseudocode._
-- 8.1 Before each step announce in the AI chat: <dynamAI name>, <step number>, and <step name>
-- 8.2 
-- 8.3 On error: report in the AI chat: <dynamAI name>, <step number>, <step name>: and a one-line explanation below it
-- 8.4 Do not proceed past any discussion point without developer's explicit ok.
+- 9.1 Before each step announce in the AI chat: <dynamAI name>, <step number>, and <step name>
+- 9.2 
+- 9.3 On error: report in the AI chat: <dynamAI name>, <step number>, <step name>: and a one-line explanation below it
+- 9.4 Do not proceed past any discussion point without developer's explicit ok.
+- 9.5 When needing developer's attention: send beep in terminal (`` [console]::Beep() ``)
+- 9.6 If PowerShell commands are blocked, run: `` Set-ExecutionPolicy RemoteSigned -Scope CurrentUser ``
 
 Following a DynamAI file completion:
 - 8.5 update projdev.yaml with values missing for any of the relevant fields.
