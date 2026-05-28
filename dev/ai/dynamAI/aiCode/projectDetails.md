@@ -5,7 +5,7 @@
 ### Input params
 owner   - e.g. pashute
 repo    - e.g. aiSpecsDev
-itemnum - issue number to get project from (e.g., 7)
+itemNum - issue number to get project from (e.g., 7)
 
 ### Output format
 JSON object with:
@@ -28,9 +28,9 @@ JSON object with:
 ```powershell
 # Get project UID from issue (tested by developer)
 $query = 'query($owner:String!, $name:String!, $number:Int!) { repository(owner:$owner, name:$name) { issue(number:$number) { projectItems(first:1) { nodes { id project { id title number } } } } } }'
-$projectUID = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemnum} --jq '.data.repository.issue.projectItems.nodes[0].project.id'
-$projectNumber = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemnum} --jq '.data.repository.issue.projectItems.nodes[0].project.number'
-$projectTitle = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemnum} --jq '.data.repository.issue.projectItems.nodes[0].project.title'
+$projectUID = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemNum} --jq '.data.repository.issue.projectItems.nodes[0].project.id'
+$projectNumber = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemNum} --jq '.data.repository.issue.projectItems.nodes[0].project.number'
+$projectTitle = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemNum} --jq '.data.repository.issue.projectItems.nodes[0].project.title'
 
 # Get field UIDs of project 
 ## (among them the project status, and its enumerated options: backlog, in-progress etc.)

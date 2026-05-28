@@ -1,6 +1,6 @@
 ```yaml
 # Filename: projdev.yaml
-# Version: 0.91
+# Version: 1.3
 # Updated at: feature start, item open, commit/push, item close, feature end.
 
 # repo
@@ -10,55 +10,78 @@ project:
 
 # project management (github project board)
 projman:
-  id: 5
+  num: 5
   name:
   uid: PVT_kwHOABsSM84BXhNk
   url: https://github.com/users/pashute/projects/5
 
 # feature (gitflow)
 feature:
-  name:         # e.g. myfeature
-  branch:       # e.g. feature/myfeature
+  name: WriteSomeSpecs
+  branch: feature/WriteSomeSpecs
   item:         # the feature item (parent issue)
-    id: 2        # issue number, not uid
+    num: 2
     title: feature/WriteSomeSpecs
     url: https://github.com/pashute/aiSpecsDev/issues/2
     state: open
-    stage:         # should be In-progress.
-    milestone:
-    date:
+    stage: in progress
+    milestone: {number: , title: , due: }
 
 # active_item: current item being worked on.
 active_item:
-  id: 2         # issue number, not uid
+  num: 2
   title: feature/WriteSomeSpecs
   url: https://github.com/pashute/aiSpecsDev/issues/2
   state: open
-  stage:         # workflow stage
-  milestone:
-  date:
+  stage: in progress
+  milestone: {number: , title: , due: }
   itemsteps: []
   subtasks:
-  - id: 7 title: "" url: "" state: "" stage: "" milestone: "" date: ""
-  - id: 5 title: "" url: "" state: "" stage: "" milestone: "" date: ""
-  - id: 3 title: "" url: "" state: "" stage: "" milestone: "" date: ""
-  - id: 6 title: "" url: "" state: "" stage: "" milestone: "" date: ""
-  - id: 4 title: "" url: "" state: "" stage: "" milestone: "" date: ""
+  - num: 7
+    title:
+    url:
+    state:
+    stage:
+    milestone: {number: , title: , due: }
+  - num: 5
+    title:
+    url:
+    state:
+    stage:
+    milestone: {number: , title: , due: }
+  - num: 3
+    title:
+    url:
+    state:
+    stage:
+    milestone: {number: , title: , due: }
+  - num: 6
+    title:
+    url:
+    state:
+    stage:
+    milestone: {number: , title: , due: }
+  - num: 4
+    title:
+    url:
+    state:
+    stage:
+    milestone: {number: , title: , due: }
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item:
-  id:
+  num:
   title:
   url:
   state:
   stage:
-  milestone:
-  date: 
+  milestone: {number: , title: , due: }
+  steps_progress: 
 
 
 
 # commits: log of all commits in this feature.
-#   each commit has: id, headline, details[], filechanges[]
+#   each commit has: hash, headline, details[], filechanges[]
 #     each filechange has: filename, path, changes[]
 #   details and changes are free text lines
 #   example detail:  "line 23. added missing initialization"
@@ -67,68 +90,10 @@ commits:
   - id: b7c67ba
     headline: feature/WriteSomeSpecs instruction refinements
     details:
-      - "Created isFeatureItem.md for feature item validation"
-      - "Updated projdevUpdate.md with aiCode references"
-      - "Updated 1a.StartFeature.md to use isFeatureItem.md"
-      - "Updated 2a.OpenProjdevItem.md with subitem search instructions"
-      - "Updated 2b.CloseProjdevItem.md with verification logic"
-      - "Added variable notation section to instructions.md"
-      - "Renumbered sections in instructions.md"
-      - "Added project UID to projdev.yaml"
-      - "Marked steps complete in steps.md"
-      - "Added vanilla template files"
-      - "User added user guide to README.md"
-    filechanges:
-      - filename: README.md
-        path: README.md
-        changes:
-          - "Added user guide section"
-      - filename: isFeatureItem.md
-        path: dev/ai/dynamAI/aiCode/isFeatureItem.md
-        changes:
-          - "Created new file"
-      - filename: projdevUpdate.md
-        path: dev/ai/dynamAI/projdevUpdate.md
-        changes:
-          - "Added aiCode references"
-      - filename: 1a.StartFeature.md
-        path: dev/ai/dynamAI/1a.StartFeature.md
-        changes:
-          - "Updated to use isFeatureItem.md"
-      - filename: 2a.OpenProjdevItem.md
-        path: dev/ai/dynamAI/2a.OpenProjdevItem.md
-        changes:
-          - "Added subitem search instructions"
-      - filename: 2b.CloseProjdevItem.md
-        path: dev/ai/dynamAI/2b.CloseProjdevItem.md
-        changes:
-          - "Added verification logic"
-      - filename: instructions.md
-        path: dev/ai/instructions.md
-        changes:
-          - "Added variable notation section"
-          - "Renumbered sections"
-      - filename: projdev.yaml
-        path: dev/ai/projdev.yaml
-        changes:
-          - "Added project UID"
-      - filename: steps.md
-        path: dev/ai/steps.md
-        changes:
-          - "Marked steps complete"
-      - filename: temp.txt
-        path: dev/ai/vanilla/temp.txt
-        changes:
-          - "Created template file"
-      - filename: steps.md
-        path: dev/ai/vanilla/steps.md
-        changes:
-          - "Created template file"
-      - filename: projdev.yaml
-        path: dev/ai/vanilla/projdev.yaml
-        changes:
-          - "Created template file"
-  - id: 2889cc2
+      - user guide, detailed instructions with verifications tested
+    filechanges: README.md, instructions.md, 1a.StartFeature.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, projdev.yaml, steps.md, temp.txt
+        
+  - hash: 2889cc2
     headline: feature/WriteSomeSpecs bell and accessibility improvements
     details:
       - "Added bell sound accessibility instructions"
@@ -137,93 +102,14 @@ commits:
       - "Created format files for commit/item/project"
       - "Created aiCode files for item operations"
       - "Cleaned up redundant schema files"
-    filechanges:
-      - filename: instructions.md
-        path: dev/ai/instructions.md
-        changes:
-          - "Added sections 6.3, 6.4"
-          - "Updated version to 0.95"
-      - filename: steps.md
-        path: dev/ai/steps.md
-        changes:
-          - "Marked steps 10.1-10.3 complete"
-          - "Added bell command reference"
-      - filename: 3.CommitAndPush.md
-        path: dev/ai/dynamAI/3.CommitAndPush.md
-        changes:
-          - "Updated step 1 title"
-          - "Moved template to format file"
-          - "Added commit/push verification instructions"
-      - filename: projdevUpdate.md
-        path: dev/ai/dynamAI/projdevUpdate.md
-        changes:
-          - "Updated status symbols"
-          - "Updated schema reference"
-      - filename: format.commit.md
-        path: dev/ai/dynamAI/formats/format.commit.md
-        changes:
-          - "Created new format file"
-          - "Added file grouping instructions"
-      - filename: format.itemClose.md
-        path: dev/ai/dynamAI/formats/format.itemClose.md
-        changes:
-          - "Created new format file"
-      - filename: format.projdev.md
-        path: dev/ai/dynamAI/formats/format.projdev.md
-        changes:
-          - "Created new format file"
-      - filename: itemClose.md
-        path: dev/ai/dynamAI/aiCode/itemClose.md
-        changes:
-          - "Created new aiCode file"
-      - filename: itemParams.md
-        path: dev/ai/dynamAI/aiCode/itemParams.md
-        changes:
-          - "Created new aiCode file"
-      - filename: itemState.md
-        path: dev/ai/dynamAI/aiCode/itemState.md
-        changes:
-          - "Created new aiCode file"
-      - filename: subItemsClosed.md
-        path: dev/ai/dynamAI/aiCode/subItemsClosed.md
-        changes:
-          - "Created new aiCode file"
-      - filename: item.md
-        path: dev/ai/dynamAI/aiCode/item.md
-        changes:
-          - "Deleted redundant file"
-      - filename: projdevYaml.schema.md
-        path: dev/ai/dynamAI/aiCode/projdevYaml.schema.md
-        changes:
-          - "Deleted redundant file"
-      - filename: temp.txt
-        path: dev/ai/vanilla/temp.txt
-        changes:
-          - "Deleted temp file"
-      - filename: steps.md
-        path: dev/ai/vanilla/steps.md
-        changes:
-          - "Updated reader section"
+    filechanges: instructions.md, steps.md, 3.CommitAndPush.md, projdevUpdate.md, format.commit.md, format.itemClose.md, format.projdev.md, itemClose.md, itemParams.md, itemState.md, subItemsClosed.md, item.md 
   - id: 62a3271
     headline: feature/WriteSomeSpecs commit instruction refactoring
     details:
       - "Fixed format.projdev.md to clarify array structure"
       - "Simplified projdevUpdate.md to reference format.projdev.md"
       - "Eliminated redundancy between format and instructions"
-    filechanges:
-      - filename: format.projdev.md
-        path: dev/ai/dynamAI/formats/format.projdev.md
-        changes:
-          - "Fixed free multiline to multiline free-text"
-          - "Added array descriptions in parentheses"
-      - filename: projdevUpdate.md
-        path: dev/ai/dynamAI/projdevUpdate.md
-        changes:
-          - "Simplified to reference format.projdev.md"
-      - filename: steps.md
-        path: dev/ai/steps.md
-        changes:
-          - "Marked steps 19.1, 19.2 complete"
+    filechanges: format.projdev.md, projdevUpdate.md 
   - id: ceac471
     headline: feature/WriteSomeSpecs add here-string format and dynamAI terminology
     details:
@@ -232,54 +118,26 @@ commits:
       - "Updated README.md to use dynamAI tasks terminology"
       - "Updated all dynamAI files below 1.0 to version 1.0"
       - "Cleaned up steps.md after previous commit"
-    filechanges:
-      - filename: format.hereString.md
-        path: dev/ai/dynamAI/formats/format.hereString.md
-        changes:
-          - "Created new format file"
-      - filename: 2b.CloseProjdevItem.md
-        path: dev/ai/dynamAI/2b.CloseProjdevItem.md
-        changes:
-          - "Replaced inline here-string instructions with reference to format file"
-          - "Version 1.0"
-      - filename: README.md
-        path: README.md
-        changes:
-          - "Updated terminology to dynamAI tasks (pronounced: dynamite tasks)"
-      - filename: 1a.StartFeature.md
-        path: dev/ai/dynamAI/1a.StartFeature.md
-        changes:
-          - "Version 1.0"
-      - filename: 1b.EndFeature.dynai.md
-        path: dev/ai/dynamAI/1b.EndFeature.dynai.md
-        changes:
-          - "Version 1.0"
-      - filename: 2a.OpenProjdevItem.md
-        path: dev/ai/dynamAI/2a.OpenProjdevItem.md
-        changes:
-          - "Version 1.0"
-      - filename: 3.CommitAndPush.md
-        path: dev/ai/dynamAI/3.CommitAndPush.md
-        changes:
-          - "Version 1.0"
-      - filename: projdevUpdate.md
-        path: dev/ai/dynamAI/projdevUpdate.md
-        changes:
-          - "Version 1.0"
-      - filename: instructions.md
-        path: dev/ai/instructions.md
-        changes:
-          - "Version 1.0"
-      - filename: steps.md
-        path: dev/ai/steps.md
-        changes:
-          - "Cleaned up completed steps"
-          - "Added new steps for here-string work"
+    filechanges: format.hereString.md, 2b.CloseProjdevItem.md, README.md, steps.md
+      
+  - hash: 87069ed
+    headline: feature/WriteSomeSpecs add completion table and project item comment to commit dynamAI
+    details:
+      - "Added checkbox step parsing to 2a.OpenProjdevItem.md"
+      - "Added checkbox step parsing to 1a.StartFeature.md"
+      - "Updated format.commit.md to include itemsteps field"
+      - "Added completion table step to 3.CommitAndPush.md"
+      - "Added project item comment step to 3.CommitAndPush.md"
+      - "Updated developer confirmations in 3.CommitAndPush.md"
+    filechanges: 2a.OpenProjdevItem.md, 1a.StartFeature.md, format.commit.md, 3.CommitAndPush.md
+
 
 # completed_items: closed items in this feature.
-# each item has: id, title, status, remarks
+# each item has: num, title, status, remarks, has_open_subitems
+# IMPORTANT: Only include items that are done or deferred
+# has_open_subitems: true if item closed but still has open subitems (partial close)
 completed_items:
-  - id:
+  - num:
     title:
     status:
     remarks:

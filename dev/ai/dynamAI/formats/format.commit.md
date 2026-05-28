@@ -1,11 +1,11 @@
 ## Filename: format.commit.md
-## Version: 1.1
+## Version: 1.3
 ### Commit message format for projdev.yaml
 
 ### Format
 ```yaml
 commits:
-  - id: {commitHash}
+  - hash: {commitHash}
     headline: {commitHeadline}
     details:
       - "{detail line 1}"
@@ -21,8 +21,8 @@ commits:
         changes:
           - "{change description 1}"
     itemsteps:
-      - "{item step 1 from description/comments}"
-      - "{item step 2 from description/comments}"
+      - "{item step 1 from GitHub description/comments}"
+      - "{item step 2 from GitHub description/comments}"
 ```
 
 ### Notes
@@ -30,7 +30,7 @@ commits:
 - When only one change to a file, put it on the same line after a colon
 - Group new files by type with headers (e.g., "New format files:", "New aiCode files:")
 - For removed files: list as "Removed files:" followed by filenames in a single line
-- id is the commit hash
+- hash is the commit hash
 - details and changes are multiline free-text blocks (array of telegraphic description lines)
-- itemsteps: list of all checkbox steps from the item's description and comments
+- itemsteps: list of all checkbox steps from the item's GitHub description and comments (NOT from steps.md)
 - Use telegraphic style (3 words or less per line)

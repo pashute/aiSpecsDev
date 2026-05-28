@@ -1,5 +1,5 @@
 Document name: instructions
-Version: 1.0
+Version: 1.3
 
 # AI Assistant Instructions
 
@@ -31,13 +31,20 @@ That means that the steps in steps.md initially look like the following:
 - [ ] 1. Do this
 - [ ] 2. Do that
 ```
-- 3.5 The active item's feature, number, title and details are in `dev/ai/projdev.yaml`. 
+- 3.5 The active item's feature, number, title and details are in `dev/ai/projdev.yaml`.
 - 3.6 Before doing anything, read `projdev.yaml` first. Always.
-- 3.7 All text documents should have a header according to the following template:  
-Filename: <filename>  
+- 3.7 CRITICAL: Check projdev.yaml for completeness before starting any dynamAI or work:
+    - Verify all required fields are populated (not empty)
+    - For subtasks: check that num, title, url, state, stage, milestone: {number, title, due} are filled
+    - For feature.item and active_item: check that milestone: {number, title, due} is filled when applicable
+    - For projman: check that name is filled
+    - If critical fields are empty: WARN developer immediately and do not proceed
+    - Empty fields indicate missing prerequisite data that must be fetched first
+- 3.8 All text documents should have a header according to the following template:
+Filename: <filename>
 Version:  <#.##>
-If it's in a code file that heading should be marked as a comment. 
-- 3.8 Update the version: When the AI updates a file it should advance the version once per commit. Advance a subnumber (v1.1.nnn) for each step. Remove subnumber when committing. 
+If it's in a code file that heading should be marked as a comment.
+- 3.9 Update the version: When the AI updates a file it should advance the version once per commit. Advance a subnumber (v1.1.nnn) for each step. Remove subnumber when committing. 
 
 ## 4. Typical spelling mistakes
 - When developer referrs to dev branch check with them if they meant the `develop` branch. 

@@ -1,5 +1,5 @@
 ## Filename: itemDetails.md
-## Version: 1.0
+## Version: 1.3
 ### Fetch GitHub item details with state, labels, milestone
 
 ### Input params
@@ -14,7 +14,7 @@ JSON object with:
 - state: open/closed
 - stateReason: reason for closed state (e.g., "duplicate", "completed"), null if open
 - labels: array of label objects (if any exist)
-- milestone: object with number, title, url
+- milestone: {number, title, due}
 
 ### Errors
 - Invalid item number/repo/owner: HTTP 404 Not Found
@@ -23,7 +23,7 @@ JSON object with:
 
 ```powershell
 # Fetch item details (tested by developer)
-gh api repos/{owner}/{repo}/issues/{number} --jq '{number, title, state, stateReason, labels, milestone: {number: .milestone.number, title: .milestone.title, url: .milestone.html_url}}'
+gh api repos/{owner}/{repo}/issues/{number} --jq '{number, title, state, stateReason, labels, milestone: {number: .milestone.number, title: .milestone.title, due: .milestone.due_on}}'
 ```
 
 ### AI instruction for labels

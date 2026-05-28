@@ -1,10 +1,10 @@
 ## Filename: subItemsClosed.md
-## Version: 1.0
+## Version: 1.3
 ### Verify all subitems are closed and in Done stage
 
 ### Input params
 subtasks - array of subtask objects from projdev.yaml active_item.subtasks
-Each subtask has: id, title, state, stage, url, milestone, date
+Each subtask has: num, title, state, stage, url, milestone: {number, title, due}
 
 ### Output format
 JSON object with:

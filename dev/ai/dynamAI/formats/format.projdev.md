@@ -1,29 +1,32 @@
 ## Filename: format.projdev.md
-## Version: 1.0
+## Version: 1.5
 ### Schema for projdev.yaml
 project:  
   owner, repo
 
 projman:  # project management details (Github Project)
-  id, name, uid, url   # id is project number, not the uid
+  num, name, uid, url
 
 feature:
   name, branch
   item:
-    id, title, state, stage, url, milestone, date     # id is the feature item issue number, not the uid
+    num, title, state, stage, url, milestone: {number, title, due}
 
 active_item:   # same as feature item, if no subitem was chosen
-  id, title, state, stage, url, milestone, date
+  num, title, state, stage, url, milestone: {number, title, due}
   subtasks:
-    - id, title, state, stage, url, milestone, date
+    - num, title, state, stage, url, milestone: {number, title, due}
 
 parent_item:     # empty if the active item is the feature item itself
-  id, title, state, stage, url, milestone, date
+  num, title, state, stage, url, milestone: {number, title, due}, steps_progress
 
 commits:
-  - id, headline     # id is the commit hash
+  - hash, headline     # hash is the commit hash
     details          # multiline free-text block (array of telegraphic description lines)
-    filechanges
-      - filename, path
-        changes    # multiline free-text block (array of telegraphic change descriptions)
+    filechanges      # comma-separated list of changed filenames
+
+completed_items:
+  - num, title, status, remarks, has_open_subitems
+  # IMPORTANT: Only include items that are done or deferred
+  # has_open_subitems: true if item closed but still has open subitems (partial close)
 

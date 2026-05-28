@@ -1,5 +1,5 @@
 ## Filename: itemStage.md
-## Version: 1.0
+## Version: 1.3
 ### Get or set GitHub Project V2 item workflow stage (status field)
 
 ### Getter mode (no stage input)
@@ -13,13 +13,13 @@ owner  - e.g. pashute
 repo   - e.g. aiSpecsDev
 number - item number (Github Project V2 issue) e.g. 7
 stage  - (optional for getter, required for setter) e.g. "In progress", "Done"
-projectID - GitHub Project V2 ID (from projdev.yaml projman.id)
-statusFieldID - Status field ID (from projdev.yaml projman.status_field_id)
+projectNum - GitHub Project V2 number (from projdev.yaml projman.num)
+statusFieldUID - Status field UID (from projdev.yaml projman.status_field_uid)
 
 ### Output format (getter)
 JSON object with:
 - stage: current workflow stage value
-- stageID: current workflow stage option ID
+- stageUID: current workflow stage option UID
 
 ### Output format (setter)
 JSON object with:
@@ -62,15 +62,15 @@ gh api graphql -f query='
       }
     }
   }
-' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].fieldValues.nodes[] | select(.name == "Status") | {stage: .name, stageID: .optionId}'
+' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].fieldValues.nodes[] | select(.name == "Status") | {stage: .name, stageUID: .optionId}'
 ```
 
 ### Setter code
 
 ```powershell
 # Set workflow stage (status field) for an item
-# First, get the project item ID
-$projectItemID = gh api graphql -f query='
+# First, get the project item UID
+$projectItemUID = gh api graphql -f query='
   query($owner: String!, $repo: String!, $number: Int!) {
     repository(owner: $owner, name: $repo) {
       issue(number: $number) {
@@ -84,8 +84,8 @@ $projectItemID = gh api graphql -f query='
   }
 ' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].id'
 
-# Then, find the stage option ID from project status field
-$stageOptionID = gh api graphql -f query='
+# Then, find the stage option UID from project status field
+$stageOptionUID = gh api graphql -f query='
   query($id: ID!) {
     node(id: $id) {
       ... on ProjectV2 {
@@ -104,14 +104,14 @@ $stageOptionID = gh api graphql -f query='
       }
     }
   }
-' -f id={projectID} --jq ".data.node.fields.nodes[] | select(.name == \"Status\") | .options[] | select(.name == \"{stage}\") | .id"
+' -f id={projectNum} --jq ".data.node.fields.nodes[] | select(.name == \"Status\") | .options[] | select(.name == \"{stage}\") | .id"
 
 # Finally, set the stage
 gh api graphql -f query='
-  mutation($projectItemID: ID!, $fieldID: ID!, $value: String!) {
+  mutation($projectItemUID: ID!, $fieldID: ID!, $value: String!) {
     updateProjectV2ItemFieldValue(input: {
-      projectId: $projectID
-      itemId: $projectItemID
+      projectId: $projectNum
+      itemId: $projectItemUID
       fieldId: $fieldID
       value: $value
     }) {
@@ -120,11 +120,11 @@ gh api graphql -f query='
       }
     }
   }
-' -f projectItemID=$projectItemID -f fieldID={statusFieldID} -f value=$stageOptionID
+' -f projectItemUID=$projectItemUID -f fieldID={statusFieldUID} -f value=$stageOptionUID
 ```
 
 ### Note
-Stage option IDs are constant across all GitHub V2 Projects:
+Stage option UIDs are constant across all GitHub V2 Projects:
 - backlog: "f75ad846"
 - ready: "08afe404"
 - in_progress: "47fc9ee4"

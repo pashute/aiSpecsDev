@@ -5,10 +5,10 @@
 ### Input params
 owner   - e.g. pashute
 repo    - e.g. aiSpecsDev
-itemnum - issue number
+itemNum - issue number
 comment - multiline comment in herestring format
 reason  - close reason: "completed", "not planned", or "duplicate"
-dupItemnum - (optional for duplicate) duplicate issue number
+dupItemNum - (optional for duplicate) duplicate issue number
 
 ### Output format
 JSON object with:
@@ -32,13 +32,13 @@ $commentBody = @"
 $comment
 "@
 
-gh api repos/{owner}/{repo}/issues/{itemnum}/comments --raw-field body="$commentBody"
+gh api repos/{owner}/{repo}/issues/{itemNum}/comments --raw-field body="$commentBody"
 
 # Step 3: Close issue with reason
 if ($reason -eq "duplicate") {
-  gh api -X PATCH repos/{owner}/{repo}/issues/{itemnum} -f state=closed -f state_reason=$reason -f duplicate_of={dupItemnum}
+  gh api -X PATCH repos/{owner}/{repo}/issues/{itemNum} -f state=closed -f state_reason=$reason -f duplicate_of={dupItemNum}
 } else {
-  gh api -X PATCH repos/{owner}/{repo}/issues/{itemnum} -f state=closed -f state_reason=$reason
+  gh api -X PATCH repos/{owner}/{repo}/issues/{itemNum} -f state=closed -f state_reason=$reason
 }
 
 $result = @{

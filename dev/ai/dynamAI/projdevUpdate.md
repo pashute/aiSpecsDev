@@ -1,5 +1,5 @@
 ## Filename: projdevUpdate.md
-**Version:** 1.0
+**Version:** 1.3
 
 Project development data at current stage
 
@@ -15,7 +15,7 @@ Example: {owner} = current repo owner from projdev.yaml
 ### On Start Feature
 - 1. Set active_item from provided item number: 
 ```markdown
-gh api repos/{owner}/{repo}/issues/{itemnum} # fetch item details
+gh api repos/{owner}/{repo}/issues/{itemNum} # fetch item details
 ```
 
 - 2. Verify issue is suitable as feature item:
@@ -27,11 +27,14 @@ gh api repos/{owner}/{repo}/issues/{itemnum} # fetch item details
 ```
 - !! If parent exists, stop with error:  
 _Start feature should be a top level item!_   
-_it has a parent:_  {parent id }: {parent_title}
+_it has a parent:_  {parent num }: {parent_title}
 
 - 3. Move project item to in-progress.
 
-Use aiCode/projectDetails.md to fetch project details and cache in projdev.yaml projman section.
+Use aiCode/projectDetails.md to fetch project details and cache in projdev.yaml projman section:
+- projman.num = projectNumber
+- projman.name = projectTitle
+- projman.uid = projectUID
 Use aiCode/itemStage.md setter to advance workflow stage to "in progress".
 
 - 4. Set feature.item fields same as active item fields
@@ -41,13 +44,14 @@ Use aiCode/itemStage.md setter to advance workflow stage to "in progress".
 - Clear feature.item, parent_item, active_item
 
 ### On Open Projdev Item
-- Set active_item with item details (id, title, state, stage, url, milestone, date) from GitHub
-- Set parent_item with parent details (id, title, state, stage, url, milestone, date)
-- Fetch and populate subtasks array (id, title, state, stage, url, milestone, date for each)
+- Set active_item with item details (num, title, state, stage, url, milestone: {number, title, due}) from GitHub
+- Set parent_item with parent details (num, title, state, stage, url, milestone: {number, title, due})
+- Fetch and populate subtasks array using aiCode/subItems.md (num, title, state, stage, url, milestone: {number, title, due} for each)
 - Advance workflow stage to "in progress" using itemStage.md setter
 
 ### On Close Projdev Item
 - Move active_item to completed_items
+- IMPORTANT: completed_items should only include items that are done or deferred
 - Clear active_item
 - Update parent_item if needed
 
