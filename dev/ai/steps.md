@@ -68,6 +68,15 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [!] discuss
 - [v] 11. Use dynamAI instructions for all relevant requested actions from now.
 - [v] 12. Add single-change instruction to format.commit.md
 - [v] 12.1 Add new/removed file instructions to format.commit.md
-- [ ] 13. Commit using dynamAI instructions
-- [ ] 14. Show results to developer
-- [ ] 15. Close current item (follow dynamai)
+- [v] 13. Commit using dynamAI instructions
+- [v] 14. Add commit/push verification instructions to 3.CommitAndPush.md
+- [v] 15. Verify commit 2889cc2 and get commit URL
+- [v] 16. Verify push and get GitHub commit URL
+- [v] 17. Update projdev.yaml with commit details
+- [v] 18. Check if commit/push verification instructions are redundant in projdevUpdate.md
+- [v] 19. Check if dynamAI 3.CommitAndPush.md correctly references projdevUpdate.md for yaml updates
+- [v] 19.1 Fix format.projdev.md to clarify array structure
+- [v] 19.2 Simplify projdevUpdate.md to reference format.projdev.md
+- [ ] 20. Commit changes to instructions and steps.md
+- [ ] 21. Show results to developer
+- [ ] 22. Close current item (follow dynamai)

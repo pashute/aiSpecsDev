@@ -22,8 +22,8 @@ parent_item:     # empty if the active item is the feature item itself
 
 commits:
   - id, headline     # id is the commit hash
-    details          # free multiline text block
+    details          # multiline free-text block (array of telegraphic description lines)
     filechanges
       - filename, path
-        changes    # free multiline text block
+        changes    # multiline free-text block (array of telegraphic change descriptions)
 
