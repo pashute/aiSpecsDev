@@ -1,5 +1,5 @@
 Document name: instructions
-Version: 0.95
+Version: 1.0
 
 # AI Assistant Instructions
 

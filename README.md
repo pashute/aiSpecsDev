@@ -13,20 +13,20 @@ A template to add to any Visual Studio project running with a powershell termina
 7. From now on copilot reads and consults with you while developing feature by feature step by step. 
 8. It knows how and when to close an item and how to end a feature (after consulting you, of course) and leave a clear record of what was done. 
 
-## AI instructions and dyanamic code
+## AI instructions and dynamAI tasks (pronounced: dynamite tasks)
 
 - Instructions file:  `/dev/ai/instructions.md` file.
 - The copilot becomes a team member with the developer.
-- The developer supplies the feature, its items and each items steps. 
-- The copilot discusses and develops the project: 
-  - reads the development feature, its items and steps,  
-  - assesses and suggests 
-  - develops step by step, constantly consulting the developer between steps. 
-- The copilot keeps track using 
+- The developer supplies the feature, its items and each items steps.
+- The copilot discusses and develops the project:
+  - reads the development feature, its items and steps,
+  - assesses and suggests
+  - develops step by step, constantly consulting the developer between steps.
+- The copilot keeps track using
   - Internal Steps.md file     - telegraphic plan and traced execution.
   - Internal projdev.yaml file - for project development parameters
   - Git:  Structured telgraphic commit comments (accomplished, file changes, problems)
-  - GitFlow:  commiting pushing and branching with the GitFlow pradigm of development 
+  - GitFlow:  commiting pushing and branching with the GitFlow pradigm of development
   - Github project: Structured closing comments. Ticked step lists. 
 
 ### Features items and tasks

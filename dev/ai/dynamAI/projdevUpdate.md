@@ -1,5 +1,5 @@
 ## Filename: projdevUpdate.md
-**Version:** 0.93
+**Version:** 1.0
 
 Project development data at current stage
 
