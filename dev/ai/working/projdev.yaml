@@ -1,0 +1,156 @@
+```yaml
+# Filename: projdev.yaml
+# Version: 1.3
+# Updated at: feature start, item open, commit/push, item close, feature end.
+
+# repo
+project:
+  owner: pashute
+  repo: aiSpecsDev
+
+# project management (github project board)
+projman:
+  num: 5
+  name: aiSpecsDev
+  uid: PVT_kwHOABsSM84BXhNk
+  url: https://github.com/users/pashute/projects/5
+
+# feature (gitflow)
+feature:
+  name: WriteSomeSpecs
+  branch: feature/WriteSomeSpecs
+  item:         # the feature item (parent issue)
+    num: 2
+    title: feature/WriteSomeSpecs
+    url: https://github.com/pashute/aiSpecsDev/issues/2
+    state: open
+    stage: in progress
+    milestone: {number: , title: , due: }
+
+# active_item: current item being worked on.
+active_item:
+  num: 7
+  title: Finish dynamAI workflow
+  url: https://github.com/pashute/aiSpecsDev/issues/7
+  state: open
+  stage: in progress
+  milestone: {number: 1, title: working1stStage, due: null}
+  itemsteps: []
+  subtasks: []
+
+# parent_item: immediate parent. empty if active_item is the feature item itself
+parent_item:
+  num: 2
+  title: feature/WriteSomeSpecs
+  url: https://github.com/pashute/aiSpecsDev/issues/2
+  state: open
+  stage: in progress
+  milestone: {number: , title: , due: }
+  steps_progress: |
+    - [v] 1. update 3.CommitAndPush.md: to create a completion table before commit comment. This is how (and has to be rephrased and put inthe instructions/format/aiCode)
+      - 1a. Read item's steps from description and comments
+      - 1b. For each item step, find similar steps in steps.md and list them
+      - 1c. Decide if step was completed or not by marking it with [v?] or [x?]
+      - 1d. When done all steps, or if no steps,  consult with user and WAIT FOR OK TO PROCEED
+      - 1d. Complete the commit-comment with this info
+      - 1e. Update format.commit.md to include the github item steps (not our worked-out steps that we decide during our discussions listed in steps.md)
+    - [v] 2. In projdev.yaml completed section, only include items done or deferred
+    - [v] 3. In 3.CommitAndPush.md: add comment to project item with commit hash and link
+    - [v] 4. Commit changes (completed without proper dynamAI confirmations - error)
+    - [v] 5. Correct projdev.yaml commits section format - filechanges as comma-separated lists
+    - [v] 6. Update format.projdev.md with completed_items schema and corrected filechanges format
+    - [v] 7. Fix projdev.yaml feature.name, feature.branch, and active_item.stage fields
+    - [v] 8. Verify 1a.StartFeature.md and 2a.OpenProjdevItem.md instruct to fill feature/project/branch fields
+    - [v] 9. Add step in 3.CommitAndPush.md to show developer comment link after creating it
+    - [v] 9b. (and wait for ok to proceed!!)
+    - [v] 10. Update instructions.md with prerequisite check for projdev.yaml completeness
+    - [v] 11. Fix all ID fields to be 'num' (projectNum, itemNum, etc.) across all aiCode and dynamAI files
+    - [v] 12. Remove remarks explaining num vs id where no longer needed
+    - [v] 13. Enhance subItems.md to fetch state, stage, milestone for each subtask
+    - [v] 14. Fix milestone structure to {number, title, due} across format.projdev.md and projdev.yaml
+    - [v] 15. Update projdevUpdate.md to fetch projman.name from projectDetails.aiCode
+    - [v] 16. Update all references to date to be milestone.due
+    - [v] 16b. Update instructions for moving to subitem/brother item within same feature:
+      - Check for uncommitted files before moving to subitem (warn and suggest commit first)
+      - When moving down to subitem: check if parent still has open subitems before coming back
+      - Add these checks to 2a.OpenProjdevItem.md and relevant dynamAI files
+    - [v] 16c. Add recursive parent close logic to 2b.CloseProjdevItem.md:
+      - After closing item, check if parent has any open subitems using aiCode/subItemsClosed.md
+      - If parent has no open subitems, recursively close the parent item
+      - Use parent's record from projdev.yaml to close it
+    - [v] 16d. Add parent progress preservation when opening child item:
+      - When opening child without closing parent, save parent's steps progress
+      - Store progress in projdev.yaml parent_item section (add steps_progress field)
+      - Restore parent progress when returning to parent
+    - [v] 17. Open item 7 using 2a.OpenProjdevItem.md dynamAI (careful test mode, user OK at each step)
+    - [v] 17b. Add logic to 2a.OpenProjdevItem.md to check if requested item is a child of current item:
+      - Check if active_item has subtasks in projdev.yaml
+      - If requested item is one of the subtasks: warn about uncommitted files, suggest commit first
+      - If requested item is not a subtask: warn that moving to another feature before completing current one is not supported
+    - [v] 18. Commit and push using 3.CommitAndPush.md dynamAI
+    - [v] 19. Open item 7 using 2a.OpenProjdevItem.md dynamAI (careful test mode, user OK at each step) 
+
+
+
+# commits: log of all commits in this feature.
+#   each commit has: hash, headline, details[], filechanges[]
+#     each filechange has: filename, path, changes[]
+#   details and changes are free text lines
+#   example detail:  "line 23. added missing initialization"
+#   example change:  "line 44. removed redundant section"
+commits:
+  - id: b7c67ba
+    headline: feature/WriteSomeSpecs instruction refinements
+    details:
+      - user guide, detailed instructions with verifications tested
+    filechanges: README.md, instructions.md, 1a.StartFeature.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, projdev.yaml, steps.md, temp.txt
+        
+  - hash: 2889cc2
+    headline: feature/WriteSomeSpecs bell and accessibility improvements
+    details:
+      - "Added bell sound accessibility instructions"
+      - "Added 3-beep attention notification"
+      - "Updated commit dynamAI with format refactoring"
+      - "Created format files for commit/item/project"
+      - "Created aiCode files for item operations"
+      - "Cleaned up redundant schema files"
+    filechanges: instructions.md, steps.md, 3.CommitAndPush.md, projdevUpdate.md, format.commit.md, format.itemClose.md, format.projdev.md, itemClose.md, itemParams.md, itemState.md, subItemsClosed.md, item.md 
+  - id: 62a3271
+    headline: feature/WriteSomeSpecs commit instruction refactoring
+    details:
+      - "Fixed format.projdev.md to clarify array structure"
+      - "Simplified projdevUpdate.md to reference format.projdev.md"
+      - "Eliminated redundancy between format and instructions"
+    filechanges: format.projdev.md, projdevUpdate.md 
+  - id: ceac471
+    headline: feature/WriteSomeSpecs add here-string format and dynamAI terminology
+    details:
+      - "Created format.hereString.md with PowerShell here-string format specification"
+      - "Updated 2b.CloseProjdevItem.md to reference format.hereString.md"
+      - "Updated README.md to use dynamAI tasks terminology"
+      - "Updated all dynamAI files below 1.0 to version 1.0"
+      - "Cleaned up steps.md after previous commit"
+    filechanges: format.hereString.md, 2b.CloseProjdevItem.md, README.md, steps.md
+      
+  - hash: 87069ed
+    headline: feature/WriteSomeSpecs add completion table and project item comment to commit dynamAI
+    details:
+      - "Added checkbox step parsing to 2a.OpenProjdevItem.md"
+      - "Added checkbox step parsing to 1a.StartFeature.md"
+      - "Updated format.commit.md to include itemsteps field"
+      - "Added completion table step to 3.CommitAndPush.md"
+      - "Added project item comment step to 3.CommitAndPush.md"
+      - "Updated developer confirmations in 3.CommitAndPush.md"
+    filechanges: 2a.OpenProjdevItem.md, 1a.StartFeature.md, format.commit.md, 3.CommitAndPush.md
+
+
+# completed_items: closed items in this feature.
+# each item has: num, title, status, remarks, has_open_subitems
+# IMPORTANT: Only include items that are done or deferred
+# has_open_subitems: true if item closed but still has open subitems (partial close)
+completed_items:
+  - num:
+    title:
+    status:
+    remarks:
+```

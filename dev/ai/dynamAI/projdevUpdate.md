@@ -1,8 +1,6 @@
 ## Filename: projdevUpdate.md
 **Version:** 1.3
 
-Project development data at current stage
-
 ## Purpose
 Instructions for updating projdev.yaml during the workflow.
 
@@ -13,7 +11,7 @@ Example: {owner} = current repo owner from projdev.yaml
 ## Sections
 
 ### On Start Feature
-- 1. Set active_item from provided item number: 
+- 1. Set active_item from provided item number:
 ```markdown
 gh api repos/{owner}/{repo}/issues/{itemNum} # fetch item details
 ```
@@ -25,8 +23,8 @@ gh api repos/{owner}/{repo}/issues/{itemNum} # fetch item details
 # - Has no parent
 # If not valid, stop with error
 ```
-- !! If parent exists, stop with error:  
-_Start feature should be a top level item!_   
+- !! If parent exists, stop with error:
+_Start feature should be a top level item!_
 _it has a parent:_  {parent num }: {parent_title}
 
 - 3. Move project item to in-progress.
@@ -39,15 +37,17 @@ Use aiCode/itemStage.md setter to advance workflow stage to "in progress".
 
 - 4. Set feature.item fields same as active item fields
 
+- 5. Update feature.name and feature.branch when creating or moving to feature branch
+
 
 ### On End Feature
 - Clear feature.item, parent_item, active_item
 
 ### On Open Projdev Item
-- Set active_item with item details (num, title, state, stage, url, milestone: {number, title, due}) from GitHub
-- Set parent_item with parent details (num, title, state, stage, url, milestone: {number, title, due})
-- Fetch and populate subtasks array using aiCode/subItems.md (num, title, state, stage, url, milestone: {number, title, due} for each)
-- Advance workflow stage to "in progress" using itemStage.md setter
+- 1. Set active_item with item details (num, title, state, stage, url, milestone: {number, title, due}) from GitHub
+- 2. Set parent_item with parent details (num, title, state, stage, url, milestone: {number, title, due})
+- 3. Fetch and populate subtasks array using aiCode/subItems.md (num, title, state, stage, url, milestone: {number, title, due} for each)
+- 4. Advance workflow stage to "in progress" using itemStage.md setter
 
 ### On Close Projdev Item
 - Move active_item to completed_items
@@ -60,7 +60,7 @@ If this is a request to close a feature head item,
 go to 1b. End Feature dynamAI
 
 ### On item step start
-- Record step start time in /dev/ai/steps.md 
+- Record step start time in /dev/ai/working/steps.md
 - Record telegraphic planned step content 
 
 ### On item step completed

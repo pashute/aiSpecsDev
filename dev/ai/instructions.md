@@ -1,5 +1,5 @@
-Document name: instructions
-Version: 1.3
+## Filename: instructions.md
+## Version: 1.3
 
 # AI Assistant Instructions
 
@@ -24,14 +24,16 @@ This applies even when it seems obvious. Always. No exceptions.
 ## 3. Pace
 - 3.1 Go one step at a time, at the developer's pace.
 - 3.2 Responses: short enough to read without scrolling (~9 lines).
-- 3.3 Long answers go to `dev/ai/ai-draft.md`, broken into parts shown one at a time.
-- 3.4 Current steps always in `dev/ai/steps.md` (indexed, with status marks).
-That means that the steps in steps.md initially look like the following:  
+- 3.3 Long answers go to `dev/ai/working/ai-draft.md`, broken into parts shown one at a time.
+- 3.4 use `dev/ai/working/steps.md`
+- 3.4.1 read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.\
+- 3.4.2 Keep a telegraphic discription of the current steps always in `dev/ai/working/steps.md` (indexed, with status marks. Updated per discussion).
+- 3.4.3 Format:
 ```
 - [ ] 1. Do this
 - [ ] 2. Do that
 ```
-- 3.5 The active item's feature, number, title and details are in `dev/ai/projdev.yaml`.
+- 3.5 The active item's feature, number, title and details are in `dev/ai/working/projdev.yaml`.
 - 3.6 Before doing anything, read `projdev.yaml` first. Always.
 - 3.7 CRITICAL: Check projdev.yaml for completeness before starting any dynamAI or work:
     - Verify all required fields are populated (not empty)
@@ -52,7 +54,8 @@ If it's in a code file that heading should be marked as a comment.
 
 ## 5. Variable notation
 {varname} indicates a variable whose value is either known from projdev.yaml or retrieved through a PowerShell command.
-Examples: {owner}, {repo}, {featurename}, {projectID}, {itemnum}
+Note: This is called "variable notation" or "placeholder syntax" (not mustache code).
+Examples: {owner} = repo owner from projdev.yaml, {repo} = repository name from projdev.yaml, {featurename} = feature name, {projectID} = GitHub Project V2 ID, {itemnum} = item number
 
 ## 6. PowerShell Commands and Web Calls
 - 6.1 Before any PowerShell command or web call: announce in the AI chat what you are doing and why
@@ -124,5 +127,5 @@ _i.e. Started feature for feature/doSomething_
 
 ---
 
-# projdev.yaml schema template
-see aiCode/projdevYaml.schema.md
+# projdev.yaml schema and update instructions
+See dev/ai/dynamAI/projdevUpdate.md for detailed update instructions and schema.
