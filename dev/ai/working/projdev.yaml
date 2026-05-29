@@ -99,6 +99,18 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: 89f62ad
+    headline: feature/WriteSomeSpecs working folder and dynamAI refinements
+    details:
+      - Created dev/ai/working/ folder for active files
+      - Moved projdev.yaml, steps.md to working/
+      - Updated all file references to point to working/
+      - Removed unwanted "Project development data at current stage" line
+      - Standardized headers to "## Filename:" and "## Version:" format
+      - Enhanced variable notation section with placeholder syntax note
+      - Added subsection numbers to projdevUpdate.md
+      - Simplified dynamAI files to reference projdevUpdate.md
+    filechanges: 1a.StartFeature.md, 1b.EndFeature.dynai.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, 3.CommitAndPush.md, projdevUpdate.md, instructions.md, vanilla/ai-draft.md, working/, ai-draft.md, projdev.yaml, steps.md
   - id: b7c67ba
     headline: feature/WriteSomeSpecs instruction refinements
     details:
