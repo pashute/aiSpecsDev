@@ -36,12 +36,6 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
-  num: 8
-  title: fix closeItem problem
-  url: https://github.com/pashute/aiSpecsDev/issues/8
-  state: open
-  stage: in progress
-  milestone: {number: , title: , due: }
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item: 
@@ -55,6 +49,15 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: 6176fac
+    headline: Add confirmation.md with CRITICAL HALT instruction and update dynamAI files
+    details:
+      - Created dev/ai/dynamAI/confirmation.md with explicit CRITICAL HALT INSTRUCTION
+      - Updated 5 dynamAI files (1a, 1b, 2a, 2b, 3) to call confirmation.md for first confirmation
+      - Added second confirmation to 1b.EndFeature.md and 2b.CloseProjdevItem.md after details shown
+      - Reordered steps.md, removed duplicates, marked review steps with V
+      - All files now reference centralized confirmation format
+    filechanges: dev/ai/dynamAI/confirmation.md, dev/ai/dynamAI/1a.StartFeature.md, dev/ai/dynamAI/1b.EndFeature.md, dev/ai/dynamAI/2a.OpenProjdevItem.md, dev/ai/dynamAI/2b.CloseProjdevItem.md, dev/ai/dynamAI/3.CommitAndPush.md, dev/ai/working/steps.md
   - hash: f5521e1
     headline: Refine dynamAI confirmation format and stop points
     details:
@@ -177,14 +180,23 @@ commits:
 # IMPORTANT: Only include items that are done or deferred
 # has_open_subitems: true if item closed but still has open subitems (partial close)
 completed_items:
+  - num: 8
+    title: fix closeItem problem
+    status: completed
+    remarks: |
+      All GitHub issue steps completed.
+      Commits: 6176fac, f5521e1, e374b9d
+      Added confirmation.md with CRITICAL HALT instruction
+      Updated all dynamAI files to use centralized confirmation format
+    has_open_subitems: false
   - num: 7
     title: Finish dynamAI workflow
     status: completed
     remarks: |
-      All GitHub issue steps completed. 
+      All GitHub issue steps completed.
       Commits: c1c4e22, 43bfa98, 89f62ad
-      Errors in process:  
+      Errors in process:
         didn't have cached status (stage) uid
-        didn't clear parent 
+        didn't clear parent
     has_open_subitems: false
 ```

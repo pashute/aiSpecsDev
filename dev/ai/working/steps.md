@@ -9,9 +9,9 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: completed 3.CommitAndPush for item 8 (commit f5521e1, metadata 0a0ff2e)
+Last action: completed 2b.CloseProjdevItem for item 8
 
-## Running dynamAI task: 3.CommitAndPush
+## Running dynamAI task: 2b.CloseProjdevItem
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](https://github.com/pashute/aiSpecsDev/issues/8)
 
 ## Fix projdev.yaml and test project details
@@ -52,5 +52,5 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](http
   - [V] 19.5 review 3.CommitAndPush.md pseudo vs steps - MISMATCH: pseudo missing first and second confirmation steps
   - [V] 19.6 review confirmation.md - OK
 - [V] 20. CRITICAL HALT: review changes before commit (beep 3 times, wait for approval)
-- [ ] 17. commit (with aicode and dynamai-task) to test dynamai changes
-- [ ] 18. close item 8 to test both dynamAI questions
+- [V] 17. commit (with aicode and dynamai-task) to test dynamai changes
+- [V] 18. close item 8 to test both dynamAI questions
