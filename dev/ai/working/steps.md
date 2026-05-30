@@ -19,16 +19,10 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](http
 
 ## Fix projdev.yaml and test project details
 
-- [v] 0. beep after sending mesasage to user. 
-- [v] 3.CommitAndPush step 1.1: Displayed confirmation question
-- [v] 16.1 format.dynamai.md: Added INTERNAL INSTRUCTION for all main actions
-- [v] 16.2 Added STOP!! instruction before 2nd confirmation in 1b, 2b, 3
-- [v] 16.3 Verified confirmation format uses markdown code blocks (already in format)
+- [v] 0. beep after sending mesasage to user.
 - [v] 16 confirmation messages completed
-- [v] 3.CommitAndPush step 1.1: Verified commit and push request
-- [v] 3.CommitAndPush step 1.2: No item steps found in GitHub issue
-- [v] 3.CommitAndPush step 2.1: Created commit message
-- [v] 3.CommitAndPush step 2.2: Showed summary to developer 
+- [v] 17 commit (with aicode and dynamai-task) to test dynamai changes
+- [ ] 18 close item 8 to test both dynamAI questions 
 - [v] 0.1 for now skip asking user between steps but:  you need to close step for each step done:  
   - mark step done in steps
   - beep 

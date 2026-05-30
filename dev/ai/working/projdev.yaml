@@ -55,6 +55,14 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: e374b9d
+    headline: Add confirmation message enhancements to dynamAI workflow
+    details:
+      - Added INTERNAL INSTRUCTION for all main actions (COMMIT, START OF FEATURE, END OF FEATURE, ITEM OPENED, ITEM CLOSED) in format.dynamAI.md
+      - Added STOP!! instruction before 2nd confirmation in 1b.EndFeature.md, 2b.CloseProjdevItem.md, and 3.CommitAndPush.md
+      - Fixed instructions.md to clarify no text should be written after beep
+      - Updated versions: format.dynamAI.md 1.5, 1b.EndFeature.md 0.2.0, 2b.CloseProjdevItem.md 0.2.2, 3.CommitAndPush.md 0.2.1, instructions.md 1.5
+    filechanges: dev/ai/dynamAI/formats/format.dynamAI.md, dev/ai/dynamAI/1b.EndFeature.md, dev/ai/dynamAI/2b.CloseProjdevItem.md, dev/ai/dynamAI/3.CommitAndPush.md, dev/ai/instructions.md, dev/ai/working/steps.md
   - hash: f85227e
     headline: Add GitHub issue comment format to CommitAndPush
     details:
