@@ -1,5 +1,5 @@
 ## Filename: format.dynamAI.md
-**Version:** 1.5
+**Version:** 1.6
 
 # Instructions
 1. All dynamAI should follow the structure set out in the format section as instructed here.
@@ -36,8 +36,8 @@ On result:
 3.2.2 State the type of problem (i.e. a prerequisit validation failure or a result verification error) along with its details. 
 
 3.2.3 Close step (when no problems occured) does the following:
-  - Marks step done in steps.md 
-  - Notifies developer with a telegraphic summary of what was done
+  - Marks step done in steps.md
+  - Notifies developer with a telegraphic summary of what was done, including dynamAI name and step number: "{dynamAI taskname (ie `(1a) OpenItem`)} {stepnum}.{stepname}"
   - Continues to next step, unless otherwise instructed. 
 
 
@@ -116,13 +116,11 @@ on result:
   - no problem: close step
 ```
 
-# Confirmation question format
+# Confirmation warning for AI
+For the AI: STOP! NO {ACTION} WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+{ACTION}: FEATURE STARTED/ENDED, ITEM OPENED/CLOSED, COMMIT
 
-INTERNAL INSTRUCTION: STOP! NO COMMIT WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
-INTERNAL INSTRUCTION: STOP! NO START OF FEATURE WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
-INTERNAL INSTRUCTION: STOP! NO END OF FEATURE WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
-INTERNAL INSTRUCTION: STOP! NO ITEM OPENED WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
-INTERNAL INSTRUCTION: STOP! NO ITEM CLOSED WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+# 5. Confirmation format
 
 When asking the developer for confirmation to proceed with an action, use this format:
 

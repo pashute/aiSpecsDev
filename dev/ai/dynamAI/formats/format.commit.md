@@ -1,5 +1,5 @@
 ## Filename: format.commit.md
-## Version: 1.3
+## Version: 1.4
 ### Commit message format for projdev.yaml
 
 ### Format
@@ -34,3 +34,10 @@ commits:
 - details and changes are multiline free-text blocks (array of telegraphic description lines)
 - itemsteps: list of all checkbox steps from the item's GitHub description and comments (NOT from steps.md)
 - Use telegraphic style (3 words or less per line)
+
+### Summary display format (for developer review)
+When showing commit summary to developer (step 2.2 in 3.CommitAndPush.md):
+1. **Primary**: Show WHAT was done (headline + details)
+2. **Secondary**: Show file list (5 files per row max)
+3. Display completion table before commit message
+4. Wait for developer ok before proceeding

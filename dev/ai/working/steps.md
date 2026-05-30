@@ -9,20 +9,19 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: completed 2b.CloseProjdevItem for item 7 (closed as completed)
+Last action: completed 3.CommitAndPush for item 8 (commit e374b9d, metadata a593c4f)
 
 ## Running dynamAI task: 3.CommitAndPush
-Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](https://github.com/pashute/aiSpecsDev/issues/8)
-
-## Running dynamAI task: 2b.CloseProjdevItem
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](https://github.com/pashute/aiSpecsDev/issues/8)
 
 ## Fix projdev.yaml and test project details
 
 - [v] 0. beep after sending mesasage to user.
 - [v] 16 confirmation messages completed
-- [v] 17 commit (with aicode and dynamai-task) to test dynamai changes
-- [ ] 18 close item 8 to test both dynamAI questions 
+- [v] 3.CommitAndPush step 1.1: Received commit and push confirmation
+- [v] 3.CommitAndPush step 2.1: Created commit message
+- [v] 3.CommitAndPush step 2.2: Showed summary to developer
+- [ ] 18.2 close item 8 to test both dynamAI questions 
 - [v] 0.1 for now skip asking user between steps but:  you need to close step for each step done:  
   - mark step done in steps
   - beep 
@@ -62,18 +61,28 @@ Invoke-RestMethod -Uri "https://api.github.com/repos/OWNER/REPO/issues/PARENT_NU
 with 5 files in each row at most. 
 - [v] 14. promised 2nd developer confirmation should work where needed. (at least: 1b, 2b, 3(b?)) is it clearly in the instructions. 
 - [v] 15. Discuss with user if something can be done to prevent commits and closures wihtout consent.
-- [ ] 16. confirmation messages
-  - [ ] 16.1 format.dynamai.md should have 
+
+ai reminder: tick off items as they are done.  if you forgot and this already is next commit, 
+it shows that you have not been following instructions. you can commit only if all steps are done!!!  
+
+For now tick them off with capital V  if you see they are done in a previous commit. 
+
+- [v] 16. confirmation messages
+  - [v] 16.1 format.dynamai.md should have 
   INTERNAL INSTRUCTION: STOP! NO {ACTION} WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
   before every basic dynamai main action: COMMIT, START OF FEATURE, END OF FEATURE, ITEM OPENED, ITEM CLOSED, 
 The first one is an ARE YOU SURE kind of question. 
 
-   - [ ] 16.2  Before the 2nd developer confirmation message in the different files, 
+   - [v] 16.2  verify that before the 2nd developer confirmation message in the different files, 
 (with feature-end note, item-close note, commit note),  should say:
    STOP!! NO {ACTION} WITHOUT AN INFORMED DEVELOPER'S CONSENT
   
-  - [ ] 16.3  both confirmation messages should be shown in md format with line after line.
+  - [v] 16.3  verify that both confirmation messages should be shown in md format with line after line.
         - long lists should be turned into sections ie 5 filenames on each line at most. 
+
+  - [v] 16.4 during dynamai step notification to developer format:
+  {dynamAI taskname (ie `(1a) OpenItem`)} {stepnum}.{stepname} 
+  
 
 - [ ] 17. commit (with aicode and dynamai-task) to test dynamai changes
 - [ ] 18. close item 8 to test both dynamAI questions 
