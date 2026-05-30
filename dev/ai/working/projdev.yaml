@@ -55,7 +55,7 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
-  - hash: 9403eaf
+  - hash: f85227e
     headline: Add GitHub issue comment format to CommitAndPush
     details:
       - Updated comment step to use GitHub issue comment format from format.dynamAI.md
