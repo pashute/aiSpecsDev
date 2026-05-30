@@ -11,7 +11,7 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 Last action: completed 2b.CloseProjdevItem for item 7 (closed as completed)
 
-## Running dynamAI task: 3.CommitAndPush
+## Running dynamAI task: 2b.CloseProjdevItem
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](https://github.com/pashute/aiSpecsDev/issues/8)
 
 ## Fix projdev.yaml and test project details
@@ -48,7 +48,9 @@ Invoke-RestMethod -Uri "https://api.github.com/repos/OWNER/REPO/issues/PARENT_NU
 - [v] 7. Correct CloseItem to Clear parent item from projdev.yaml when done. 
 - [v] 8. Correct Yaml to have cleared parent. 
 - [V] 9. Check that close item wrties to suggest next item from projdev.yaml
-- [ ] 10. if all ok commitNpush. otherwise consult developer (meaning wait through iterations tell the user releases the conversation)
-- [ ] 11. and if all good, close item.  STOP on any problem this is testing that it works. 
+- [v] 10. if all ok commitNpush. otherwise consult developer (meaning wait through iterations tell the user releases the conversation)
+- [v] 11. Add confirmation question format to format.dynamAI.md and update all dynamAI files (1a, 2a, 1b, 2b, 3)
+- [ ] 12. commit and push confirmation question format changes
+- [ ] 13. close item 8 to test both dynamAI questions 
  
 

@@ -106,12 +106,53 @@ on result:
   - no problem:  Close step
 ```
 
-4. List the result verification steps: 
+4. List the result verification steps:
 
 ```
 ## 4. Result verification steps
 ### 4.1 Verify that ...
 - on result:
-  - problem: consult developer. 
+  - problem: consult developer.
   - no problem: close step
 ```
+
+# Confirmation question format
+
+INTERNAL INSTRUCTION: STOP! NO COMMIT WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+
+When asking the developer for confirmation to proceed with an action, use this format:
+
+```
+Feature: {feature.name}, item {active_item.num}.{active_item.title}
+{accomplished}
+{assurance}
+{question}
+```
+
+Where:
+- {feature.name}: Name of the feature from projdev.yaml
+- {active_item.num}: Number of the active item from projdev.yaml
+- {active_item.title}: Title of the active item from projdev.yaml
+- {accomplished}: 5-6 words describing what was accomplished (e.g., "All steps completed", "All changes committed")
+- {assurance}: "Will reconfirm after accomplishment details"
+- {question}: The question to ask (e.g., "Commit only or commit and push?" or "Proceed with closing?")
+
+Display this as a markdown code block for proper line breaks, then beep after the message.
+
+# GitHub issue comment format
+
+For adding comments to GitHub issues (commit or close), use this format:
+
+```
+{commit_hash}: {commit_url}
+
+{telegraphic_summary}
+
+{question}
+```
+
+Where:
+- {commit_hash}: The commit hash
+- {commit_url}: Full GitHub commit URL
+- {telegraphic_summary}: Brief summary bringing things together, no details
+- {question}: Follow-up question if applicable
