@@ -29,14 +29,6 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
-  num: 7
-  title: Finish dynamAI workflow
-  url: https://github.com/pashute/aiSpecsDev/issues/7
-  state: open
-  stage: in progress
-  milestone: {number: 1, title: working1stStage, due: null}
-  itemsteps: []
-  subtasks: []
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item:
@@ -184,8 +176,9 @@ commits:
 # IMPORTANT: Only include items that are done or deferred
 # has_open_subitems: true if item closed but still has open subitems (partial close)
 completed_items:
-  - num:
-    title:
-    status:
-    remarks:
+  - num: 7
+    title: Finish dynamAI workflow
+    status: completed
+    remarks: All GitHub issue steps completed. Commits: c1c4e22, 43bfa98, 89f62ad
+    has_open_subitems: false
 ```

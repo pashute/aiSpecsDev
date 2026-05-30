@@ -9,10 +9,5 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: completed 3.CommitAndPush for item 7 (c1c4e22)
-
-- [ ] 13.7 Close the item using 2b.CloseProjdevItem dynamAI
-
-## Running dynamAI task: 2b.CloseProjdevItem
-Project info: aiSpecsDev, feature/WriteSomeSpecs, [7.Finish dynamAI workflow](https://github.com/pashute/aiSpecsDev/issues/7)
+Last action: completed 2b.CloseProjdevItem for item 7 (closed as completed)
 
