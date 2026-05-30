@@ -97,7 +97,7 @@ $stageOptionUID = switch ({stage}) {
 
 # Set the stage using cached project UID and status field UID from projdev.yaml
 gh api graphql -f query='
-  mutation($projectItemUID: ID!, $fieldID: ID!, $value: String!) {
+  mutation($projectItemUID: ID!, $fieldID: ID!, $value: String!, $projectNum: ID!) {
     updateProjectV2ItemFieldValue(input: {
       projectId: $projectNum
       itemId: $projectItemUID
@@ -111,7 +111,7 @@ gh api graphql -f query='
       }
     }
   }
-' -f projectItemUID=$projectItemUID -f fieldID={statusFieldUID} -f value=$stageOptionUID
+' -f projectItemUID=$projectItemUID -f fieldID={statusFieldUID} -f value=$stageOptionUID -f projectNum={projectNum}
 ```
 
 ### Note
