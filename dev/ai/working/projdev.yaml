@@ -99,6 +99,20 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: 43bfa98
+    headline: feature/WriteSomeSpecs dynamAI workflow refactoring
+    details:
+      - Standardized all dynamAI task files to format.dynamAI.md structure
+      - Added per-step problem handling with On result blocks
+      - Pseudo section provides quick overview of each task
+      - Instruction pointers to shared code and formatting files
+      - Standardized projdev info in yaml
+      - Moved steps.md and projdev.yaml to working/ folder
+      - Added vanilla/ folder for template files
+      - Fixed API errors in aiCode files for proper AI execution
+      - Implemented two-phase commit (work files, then metadata)
+      - Added metadata-only commit detection in all dynamAI tasks
+    filechanges: 1a.StartFeature.md, 1b.EndFeature.dynai.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, 3.CommitAndPush.md, steps.md, instructions.md, formats/format.dynamAI.md, formats/format.header.md, formats/format.steps.md
   - hash: 89f62ad
     headline: feature/WriteSomeSpecs working folder and dynamAI refinements
     details:
