@@ -1,5 +1,5 @@
 ## Filename: itemStage.md
-## Version: 1.3
+## Version: 1.4
 ### Get or set GitHub Project V2 item workflow stage (status field)
 
 ### Getter mode (no stage input)
@@ -13,8 +13,8 @@ owner  - e.g. pashute
 repo   - e.g. aiSpecsDev
 number - item number (Github Project V2 issue) e.g. 7
 stage  - (optional for getter, required for setter) e.g. "In progress", "Done"
-projectNum - GitHub Project V2 number (from projdev.yaml projman.num)
-statusFieldUID - Status field UID (from projdev.yaml projman.status_field_uid)
+projectNum - GitHub Project V2 number (from projdev.yaml projman.num) - setter only
+statusFieldUID - Status field UID (from projdev.yaml projman.status_field_uid) - setter only
 
 ### Output format (getter)
 JSON object with:
@@ -50,7 +50,7 @@ gh api graphql -f query='
             id
             fieldValues(first: 20) {
               nodes {
-                ... on ProjectV2SingleSelectField {
+                ... on ProjectV2ItemFieldSingleSelectValue {
                   id
                   name
                   optionId
@@ -62,7 +62,7 @@ gh api graphql -f query='
       }
     }
   }
-' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].fieldValues.nodes[] | select(.name == "Status") | {stage: .name, stageUID: .optionId}'
+' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].fieldValues.nodes[] | select(.name != null) | {stage: .name, stageUID: .optionId}'
 ```
 
 ### Setter code
@@ -84,36 +84,27 @@ $projectItemUID = gh api graphql -f query='
   }
 ' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].id'
 
-# Then, find the stage option UID from project status field
-$stageOptionUID = gh api graphql -f query='
-  query($id: ID!) {
-    node(id: $id) {
-      ... on ProjectV2 {
-        fields(first: 20) {
-          nodes {
-            ... on ProjectV2SingleSelectField {
-              id
-              name
-              options {
-                id
-                name
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-' -f id={projectNum} --jq ".data.node.fields.nodes[] | select(.name == \"Status\") | .options[] | select(.name == \"{stage}\") | .id"
+# Use cached stage option UID from projdev.yaml or constant from note below
+# Stage option UIDs are constant across all GitHub V2 Projects:
+# backlog: "f75ad846", ready: "08afe404", in_progress: "47fc9ee4", in_review: "4cc61d42", done: "98236657"
+$stageOptionUID = switch ({stage}) {
+  "Backlog" { "f75ad846" }
+  "Ready" { "08afe404" }
+  "In progress" { "47fc9ee4" }
+  "In review" { "4cc61d42" }
+  "Done" { "98236657" }
+}
 
-# Finally, set the stage
+# Set the stage using cached project UID and status field UID from projdev.yaml
 gh api graphql -f query='
   mutation($projectItemUID: ID!, $fieldID: ID!, $value: String!) {
     updateProjectV2ItemFieldValue(input: {
       projectId: $projectNum
       itemId: $projectItemUID
       fieldId: $fieldID
-      value: $value
+      value: {
+        singleSelectOptionId: $value
+      }
     }) {
       projectV2Item {
         id

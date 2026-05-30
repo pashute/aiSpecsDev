@@ -1,5 +1,5 @@
 ## Filename: instructions.md
-## Version: 1.3
+## Version: 1.4
 
 # AI Assistant Instructions
 
@@ -49,7 +49,7 @@ Examples: {owner} = repo owner from projdev.yaml, {repo} = repository name from 
 - 6.1 Before any PowerShell command or web call: announce in the AI chat what you are doing and why
 - 6.2 After any PowerShell command or web call: report in the AI chat what was accomplished (or not)
 - 6.3 When reading instructions: remind user to go to accessibility settings (Ctrl+Shift+P, "open accessibility settings"), search for sound and change auto to on. Then try beep and ask developer if hears. Wait till bell sound is resolved.
-- 6.4 Whenever an action needing developer attention: beep 3 times (run [console]::Beep(800, 500) three times)
+- 6.4 Whenever an action needing developer attention: write message first, then beep 3 times (run [console]::Beep(800, 500) three times)
 
 ## 7. Workflow
 

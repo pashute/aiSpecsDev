@@ -38,7 +38,14 @@ but didn't close item yet.  Before that:
 - [v] 11.3 If those two reflect recent completed commit, notify developer and add step to commit them
 - [v] 11.4 Update all dynamAI files to version 0.1.5
 - [v] 12 Commit all changes using 3.CommitAndPush dynamAI
-- [ ] 13 Close the item using 2b.CloseProjdevItem dynamAI
+- [v] 13.1 Add verification step to 2b.CloseProjdevItem.md (are you sure with item info)
+- [v] 13.2 Update instructions.md to write message before beep
+- [v] 13.3 Update versions to 0.1.6
+- [v] 13.4 Fix GraphQL query in aiCode/itemStage.md (fragment spread and field name errors)
+- [v] 13.5 Update 3.CommitAndPush.md verification step to include feature/item details and commit summary confirmation
+- [v] 13.6 Commit changes using 3.CommitAndPush dynamAI (itemStage.md setter fix, 2b.CloseProjdevItem.md verification fix, instructions.md beep fix)
+- [ ] 13.7 Close the item using 2b.CloseProjdevItem dynamAI
 
-Last action: completed 3.CommitAndPush for item 7 (commit 43bfa98)
+## Running dynamAI task: 3.CommitAndPush
+Project info: aiSpecsDev, feature/WriteSomeSpecs, [7.Finish dynamAI workflow](https://github.com/pashute/aiSpecsDev/issues/7)
 
