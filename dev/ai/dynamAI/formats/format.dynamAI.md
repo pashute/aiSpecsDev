@@ -1,5 +1,5 @@
 ## Filename: format.dynamAI.md
-**Version:** 1.4
+**Version:** 1.5
 
 # Instructions
 1. All dynamAI should follow the structure set out in the format section as instructed here.
@@ -119,6 +119,10 @@ on result:
 # Confirmation question format
 
 INTERNAL INSTRUCTION: STOP! NO COMMIT WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+INTERNAL INSTRUCTION: STOP! NO START OF FEATURE WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+INTERNAL INSTRUCTION: STOP! NO END OF FEATURE WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+INTERNAL INSTRUCTION: STOP! NO ITEM OPENED WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
+INTERNAL INSTRUCTION: STOP! NO ITEM CLOSED WITHOUT IMMEDIATE DEVELOPER'S CONSENT.
 
 When asking the developer for confirmation to proceed with an action, use this format:
 
