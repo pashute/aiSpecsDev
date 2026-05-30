@@ -36,9 +36,18 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
+  num: 3
+  title: NodeJS
+  url: https://github.com/pashute/aiSpecsDev/issues/3
+  state: open
+  stage: in progress
+  milestone: {number: 1, title: working1stStage, due: }
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
-parent_item: 
+parent_item:
+  num: 2
+  title: feature/WriteSomeSpecs
+  url: https://github.com/pashute/aiSpecsDev/issues/2 
 
 
 
