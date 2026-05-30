@@ -55,6 +55,14 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: e34099f
+    headline: Add confirmation question format to all dynamAI files
+    details:
+      - Added confirmation question format to format.dynamAI.md
+      - Updated all dynamAI files (1a, 2a, 1b, 2b, 3) to reference format
+      - Renamed 1b.EndFeature.dynai.md to 1b.EndFeature.md
+      - Updated versions to 0.1.6
+    filechanges: format.dynamAI.md, 1a.StartFeature.md, 2a.OpenProjdevItem.md, 1b.EndFeature.md, 2b.CloseProjdevItem.md, 3.CommitAndPush.md, steps.md
   - hash: 1a1d898
     headline: Fix commitAndPush message formatting
     details:
