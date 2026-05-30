@@ -49,7 +49,7 @@ Invoke-RestMethod -Uri "https://api.github.com/repos/OWNER/REPO/issues/PARENT_NU
 - [v] 8. Correct Yaml to have cleared parent. 
 - [V] 9. Check that close item wrties to suggest next item from projdev.yaml
 - [v] 10. if all ok commitNpush. otherwise consult developer (meaning wait through iterations tell the user releases the conversation)
-- [v] 11. Add confirmation question format to format.dynamAI.md and update all dynamAI files (1a, 2a, 1b, 2b, 3)
+- [v] 11. Add confirmation question format to format.dynamAI.md and update all dynamAI files (1a, 2a, 1b(rename), 2b, 3,projdevInstructions) versions 0.1.6 
 - [ ] 12. commit and push confirmation question format changes
 - [ ] 13. close item 8 to test both dynamAI questions 
  
