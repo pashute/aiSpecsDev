@@ -55,6 +55,15 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: f5521e1
+    headline: Refine dynamAI confirmation format and stop points
+    details:
+      - Updated format.dynamAI.md to use parameterized confirmation warning
+      - Added first confirmation as stop point in 1a.StartFeature, 1b.EndFeature, 2a.OpenProjdevItem
+      - Updated 3.CommitAndPush to follow developer's response for commit type
+      - Refined step notification format to include dynamAI taskname
+      - Updated versions: format.dynamAI.md 1.6
+    filechanges: dev/ai/dynamAI/1a.StartFeature.md, dev/ai/dynamAI/1b.EndFeature.md, dev/ai/dynamAI/2a.OpenProjdevItem.md, dev/ai/dynamAI/3.CommitAndPush.md, dev/ai/dynamAI/formats/format.dynamAI.md, dev/ai/dynamAI/formats/format.commit.md, dev/ai/working/steps.md, dev/ai/working/ai-draft.md
   - hash: e374b9d
     headline: Add confirmation message enhancements to dynamAI workflow
     details:
