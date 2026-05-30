@@ -10,15 +10,18 @@ The AI stays focused, aligned, and waits for the human.
 
 ## 2. ⛔ You aren't alone
 ### 2.1 ⛔ Rule Zero — Always Stop and Ask
-Never commit, push, merge, close, delete, or end a feature without
-an explicit "go ahead" for that specific action.
-Even if the developer said "do X and Y" — stop between each and confirm.
-This applies even when it seems obvious. Always. No exceptions.
+2.1.1 Never commit, push, merge, close, delete, or end a feature without an explicit "go ahead" for that specific action.
+2.1.2 When executing instructions not in a preconcieved dynamai task, consider each action in a compound sentence as a separate action, and stop and wait for developers' ok unless explicitely requested otherwise.
+2.1.3 This applies even when it seems obvious. Always. No exceptions.
 
 ### 2.2 ⛔ Second Rule Zero - Never Assume
-- Never assume. 
-- Never self-confirm.
-- Always propose, discuss, and ask. 
+- 2.2.1 **Never assume.**
+- 2.2.2 **Consult:** When told to consult the developer, it means wait for their instruction to proceed. That instruction may not come immediately, but only after a conversation.
+- 2.2.3 **Never self-confirm:** When asked to confirm something, if not otherwise instructed, always consult with the developer after your confirmation and before proceeding.
+- 2.2.4 **Always propose, discuss, and ask.**
+- 2.2.5 **Discuss problems:** When an error occurs, or a requested confirmation fails, or anything goes wrong unless explicitely told otherwise, report and discuss it with the developer and wait for their instruction to proceed.
+- 2.2.6 **Halt on errors:** Report and stop if anything is missing or goes wrong. 
+- 2.2.7 **Stick to the dynamAI sequence**: if a problem occured, and you find a way to continue, don't. Instead, suggest it to the developer and wait for instructions. 
 
 
 ## 3. Pace
@@ -26,27 +29,12 @@ This applies even when it seems obvious. Always. No exceptions.
 - 3.2 Responses: short enough to read without scrolling (~9 lines).
 - 3.3 Long answers go to `dev/ai/working/ai-draft.md`, broken into parts shown one at a time.
 - 3.4 use `dev/ai/working/steps.md`
-- 3.4.1 read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.\
-- 3.4.2 Keep a telegraphic discription of the current steps always in `dev/ai/working/steps.md` (indexed, with status marks. Updated per discussion).
-- 3.4.3 Format:
-```
-- [ ] 1. Do this
-- [ ] 2. Do that
-```
-- 3.5 The active item's feature, number, title and details are in `dev/ai/working/projdev.yaml`.
+- 3.4.1 read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.
+- 3.4.2 Write steps according to `format.steps.md` instructions and format
+
+- 3.5 The active item's feature, number, title and details are stored in `dev/ai/working/projdev.yaml`.
 - 3.6 Before doing anything, read `projdev.yaml` first. Always.
-- 3.7 CRITICAL: Check projdev.yaml for completeness before starting any dynamAI or work:
-    - Verify all required fields are populated (not empty)
-    - For subtasks: check that num, title, url, state, stage, milestone: {number, title, due} are filled
-    - For feature.item and active_item: check that milestone: {number, title, due} is filled when applicable
-    - For projman: check that name is filled
-    - If critical fields are empty: WARN developer immediately and do not proceed
-    - Empty fields indicate missing prerequisite data that must be fetched first
-- 3.8 All text documents should have a header according to the following template:
-Filename: <filename>
-Version:  <#.##>
-If it's in a code file that heading should be marked as a comment.
-- 3.9 Update the version: When the AI updates a file it should advance the version once per commit. Advance a subnumber (v1.1.nnn) for each step. Remove subnumber when committing. 
+- 3.7 Update the version: When the AI updates a text file it should advance the version. See instructions in formats/format.header.md
 
 ## 4. Typical spelling mistakes
 - When developer referrs to dev branch check with them if they meant the `develop` branch. 

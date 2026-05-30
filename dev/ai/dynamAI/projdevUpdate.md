@@ -75,4 +75,4 @@ go to 1b. End Feature dynamAI
   - Get GitHub commit URL: https://github.com/{owner}/{repo}/commit/{hash}
 
 ### Format
-- projdev.yaml schema and field explanations is listed in /dev/ai/dynamAI/formats/format.projdev.md
+- projdev.yaml schema is listed in /dev/ai/dynamAI/formats/format.projdev.md with each field's explanation.
