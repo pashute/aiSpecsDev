@@ -13,6 +13,6 @@ Last action: completed 3.CommitAndPush for item 7 (c1c4e22)
 
 - [ ] 13.7 Close the item using 2b.CloseProjdevItem dynamAI
 
-## Running dynamAI task: 3.CommitAndPush
+## Running dynamAI task: 2b.CloseProjdevItem
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [7.Finish dynamAI workflow](https://github.com/pashute/aiSpecsDev/issues/7)
 
