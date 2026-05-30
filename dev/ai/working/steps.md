@@ -11,6 +11,9 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 Last action: completed 2b.CloseProjdevItem for item 7 (closed as completed)
 
+## Running dynamAI task: 3.CommitAndPush
+Project info: aiSpecsDev, feature/WriteSomeSpecs, [8.fix closeItem problem](https://github.com/pashute/aiSpecsDev/issues/8)
+
 ## Fix projdev.yaml and test project details
 
 - [v] 0. beep after sending mesasage to user. 
