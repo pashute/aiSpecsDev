@@ -9,7 +9,7 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: added automatic partial detection to 2b.CloseProjdevItem.md
+Last action: partially closed item 3 (has open subitem 10)
 
 ## Running dynamAI task: 3.CommitAndPush
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [3.NodeJS](https://github.com/pashute/aiSpecsDev/issues/3)
@@ -18,6 +18,7 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [3.NodeJS](https://github.com/
 - [v] Update yaml with item 3's subitem 10
 - [v] Verify automatic partial detection in closeItem - DOES NOT WORK (requires explicit developer choice)
 - [v] Add automatic partial detection to 2b.CloseProjdevItem.md (added step 2.5, renumbered steps)
+- [v] Commit changes
 
 ## NodeJS implementation steps
 

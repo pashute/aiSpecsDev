@@ -36,24 +36,9 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
-  num: 3
-  title: NodeJS
-  url: https://github.com/pashute/aiSpecsDev/issues/3
-  state: open
-  stage: in progress
-  milestone: {number: 1, title: working1stStage, due: }
-  subtasks:
-    - num: 10
-      title: fix openClose projman item
-      state: open
-      stage: backlog
-      url: https://github.com/pashute/aiSpecsDev/issues/10
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
-parent_item:
-  num: 2
-  title: feature/WriteSomeSpecs
-  url: https://github.com/pashute/aiSpecsDev/issues/2 
+parent_item: 
 
 
 
@@ -192,26 +177,19 @@ commits:
 
 # completed_items: closed items in this feature.
 # each item has: num, title, status, remarks, has_open_subitems
-# IMPORTANT: Only include items that are done or deferred
-# has_open_subitems: true if item closed but still has open subitems (partial close)
 completed_items:
-  - num: 8
+  - num: 3
+    title: NodeJS
+    status: completed
+    remarks: Partial close - has open subitem 10 (fix openClose projman item). Commits: 7979da7 (Open item 3), 1b9884a (Add automatic partial detection to closeItem and NodeJS server)
+    has_open_subitems: true
+  - num: 7
     title: fix closeItem problem
     status: completed
-    remarks: |
-      All GitHub issue steps completed.
-      Commits: 6176fac, f5521e1, e374b9d
-      Added confirmation.md with CRITICAL HALT instruction
-      Updated all dynamAI files to use centralized confirmation format
-    has_open_subitems: false
-  - num: 7
-    title: Finish dynamAI workflow
+    remarks: Partial close - has open subitem 8 (fix openItem problem). Commits: 43bfa98 (feature/WriteSomeSpecs dynamAI workflow refactoring)
+    has_open_subitems: true
+  - num: 8
+    title: fix openItem problem
     status: completed
-    remarks: |
-      All GitHub issue steps completed.
-      Commits: c1c4e22, 43bfa98, 89f62ad
-      Errors in process:
-        didn't have cached status (stage) uid
-        didn't clear parent
+    remarks: Completed. Commits: 6176fac (Add confirmation.md with CRITICAL HALT instruction and update dynamAI files), f5521e1 (Refine dynamAI confirmation format and stop points), e374b9d (Add confirmation message enhancements to dynamAI workflow)
     has_open_subitems: false
-```
