@@ -42,6 +42,12 @@ active_item:
   state: open
   stage: in progress
   milestone: {number: 1, title: working1stStage, due: }
+  subtasks:
+    - num: 10
+      title: fix openClose projman item
+      state: open
+      stage: backlog
+      url: https://github.com/pashute/aiSpecsDev/issues/10
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item:

@@ -9,13 +9,18 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: completed 2a.OpenProjdevItem for item 3
+Last action: added automatic partial detection to 2b.CloseProjdevItem.md
 
-## Running dynamAI task: 2a.OpenProjdevItem
+## Running dynamAI task: 3.CommitAndPush
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [3.NodeJS](https://github.com/pashute/aiSpecsDev/issues/3)
+
+- [x] 2b.CloseProjdevItem (aborted - need to update yaml with subitem first)
+- [v] Update yaml with item 3's subitem 10
+- [v] Verify automatic partial detection in closeItem - DOES NOT WORK (requires explicit developer choice)
+- [v] Add automatic partial detection to 2b.CloseProjdevItem.md (added step 2.5, renumbered steps)
 
 ## NodeJS implementation steps
 
-- [ ] 1. install nodejs
-- [ ] 2. update src to run from a server
-- [ ] 3. run and check that all works
+- [v] 1. install nodejs (already installed v22.20.0)
+- [v] 2. update src to run from a server (created server.js)
+- [v] 3. run and check that all works (server tested successfully at http://localhost:3000/)
