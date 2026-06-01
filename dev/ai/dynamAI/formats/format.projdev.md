@@ -13,7 +13,7 @@ feature:
     num, title, state, stage, url, milestone: {number, title, due}
 
 active_item:   # same as feature item, if no subitem was chosen
-  num, title, state, stage, url, milestone: {number, title, due}
+  num, title, state, stage, url, milestone: {number, title, due}, item_uid
   subtasks:
     - num, title, state, stage, url, milestone: {number, title, due}
 

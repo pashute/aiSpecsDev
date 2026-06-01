@@ -27,8 +27,8 @@ gh api repos/{owner}/{repo}/issues/{number} --jq '{number, title, state, stateRe
 ```
 
 ### AI instruction for labels
-If labels array is not empty, extract label id and name:
+If labels array is not empty, extract label UID and name:
 ```powershell
-# Get labels with id and name (if labels exist)
-gh api repos/{owner}/{repo}/issues/{number} --jq '.labels | map({id, name})'
+# Get labels with UID and name (if labels exist)
+gh api repos/{owner}/{repo}/issues/{number} --jq '.labels | map({id: .node_id, name})'
 ```

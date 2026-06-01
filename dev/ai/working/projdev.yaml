@@ -36,9 +36,19 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
+  num: 10
+  title: fix openClose projman item
+  url: https://github.com/pashute/aiSpecsDev/issues/10
+  state: open
+  stage: in progress
+  milestone: {number: , title: , due: }
+  item_uid: PVTI_lAHOABsSM84BXhNkzguQTLc
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
-parent_item: 
+parent_item:
+  num: 3
+  title: NodeJS
+  url: https://github.com/pashute/aiSpecsDev/issues/3 
 
 
 
@@ -178,6 +188,11 @@ commits:
 # completed_items: closed items in this feature.
 # each item has: num, title, status, remarks, has_open_subitems
 completed_items:
+  - num: 5
+    title: templates
+    status: completed
+    remarks: Not planned (cancelled)
+    has_open_subitems: false
   - num: 3
     title: NodeJS
     status: completed

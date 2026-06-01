@@ -13,8 +13,9 @@ owner  - e.g. pashute
 repo   - e.g. aiSpecsDev
 number - item number (Github Project V2 issue) e.g. 7
 stage  - (optional for getter, required for setter) e.g. "In progress", "Done"
-projectNum - GitHub Project V2 number (from projdev.yaml projman.num) - setter only
+projectUID - GitHub Project V2 UID (from projdev.yaml projman.uid) - setter only
 statusFieldUID - Status field UID (from projdev.yaml projman.status_field_uid) - setter only
+itemUID - (optional) Project item UID from projdev.yaml active_item.item_uid - if provided, skip fetching
 
 ### Output format (getter)
 JSON object with:
@@ -69,20 +70,25 @@ gh api graphql -f query='
 
 ```powershell
 # Set workflow stage (status field) for an item
-# First, get the project item UID
-$projectItemUID = gh api graphql -f query='
-  query($owner: String!, $repo: String!, $number: Int!) {
-    repository(owner: $owner, name: $repo) {
-      issue(number: $number) {
-        projectItems(first: 10) {
-          nodes {
-            id
+# Check if itemUID is provided (cached from yaml)
+if ({itemUID}) {
+  $projectItemUID = {itemUID}
+} else {
+  # First, get the project item UID
+  $projectItemUID = gh api graphql -f query='
+    query($owner: String!, $repo: String!, $number: Int!) {
+      repository(owner: $owner, name: $repo) {
+        issue(number: $number) {
+          projectItems(first: 10) {
+            nodes {
+              id
+            }
           }
         }
       }
     }
-  }
-' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].id'
+  ' -F owner={owner} -F repo={repo} -F number={number} --jq '.data.repository.issue.projectItems.nodes[0].id'
+}
 
 # Use cached stage option UID from projdev.yaml or constant from note below
 # Stage option UIDs are constant across all GitHub V2 Projects:
@@ -97,11 +103,11 @@ $stageOptionUID = switch ({stage}) {
 
 # Set the stage using cached project UID and status field UID from projdev.yaml
 gh api graphql -f query='
-  mutation($projectItemUID: ID!, $fieldID: ID!, $value: String!, $projectNum: ID!) {
+  mutation($projectItemUID: ID!, $fieldUID: ID!, $value: String!, $projectUID: ID!) {
     updateProjectV2ItemFieldValue(input: {
-      projectId: $projectNum
+      projectId: $projectUID
       itemId: $projectItemUID
-      fieldId: $fieldID
+      fieldId: $fieldUID
       value: {
         singleSelectOptionId: $value
       }
@@ -111,7 +117,7 @@ gh api graphql -f query='
       }
     }
   }
-' -f projectItemUID=$projectItemUID -f fieldID={statusFieldUID} -f value=$stageOptionUID -f projectNum={projectNum}
+' -f projectItemUID=$projectItemUID -f fieldUID={statusFieldUID} -f value=$stageOptionUID -f projectUID={projectUID}
 ```
 
 ### Note

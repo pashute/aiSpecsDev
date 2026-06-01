@@ -32,7 +32,7 @@ $projectUID = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}"
 $projectNumber = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemNum} --jq '.data.repository.issue.projectItems.nodes[0].project.number'
 $projectTitle = gh api graphql -f query=$query -F owner="{owner}" -F name="{repo}" -F number={itemNum} --jq '.data.repository.issue.projectItems.nodes[0].project.title'
 
-# Get field UIDs of project 
+# Get field UIDs of project
 ## (among them the project status, and its enumerated options: backlog, in-progress etc.)
 gh api graphql -f query='query($id: ID!) { node(id: $id) { ... on ProjectV2 { fields(first: 20) { nodes { ... on ProjectV2SingleSelectField { id dataType name options { id name } } } } } } }' -f id={projectUID}
 ```
@@ -42,6 +42,18 @@ gh api graphql -f query='query($id: ID!) { node(id: $id) { ... on ProjectV2 { fi
 - If exists and projectSame returns true, use cached values
 - If not, fetch new values and store in projdev.yaml
 
+### AI instruction for feature subitems stage tracking
+- When startFeature is called, use projectDetails to fetch stage option UIDs
+- Ensure all feature subitems have stage information populated in projdev.yaml
+- Use aiCode/itemStage.md to set and verify stages for each subitem
+- This ensures stage tracking works for all subitems in the feature
+
 ### Remarks for human/AI team
 - Current project UID: PVT_kwHOABsSM84BXhNk
 - This UID is constant for this project and should be cached in projdev.yaml projman.uid
+- Stage option UIDs are constant across all GitHub V2 Projects:
+  - backlog: "f75ad846"
+  - ready: "08afe404"
+  - in_progress: "47fc9ee4"
+  - in_review: "4cc61d42"
+  - done: "98236657"
