@@ -1,5 +1,5 @@
 ## Filename: format.commit.md
-## Version: 1.4
+## Version: 1.5
 ### Commit message format for projdev.yaml
 
 ### Format
@@ -23,6 +23,7 @@ commits:
     itemsteps:
       - "{item step 1 from GitHub description/comments}"
       - "{item step 2 from GitHub description/comments}"
+    attribution: "by AI assistant (Cascade)"
 ```
 
 ### Notes
@@ -33,6 +34,7 @@ commits:
 - hash is the commit hash
 - details and changes are multiline free-text blocks (array of telegraphic description lines)
 - itemsteps: list of all checkbox steps from the item's GitHub description and comments (NOT from steps.md)
+- attribution: "by AI assistant (Cascade)" - required for all AI-performed commits
 - Use telegraphic style (3 words or less per line)
 
 ### Summary display format (for developer review)

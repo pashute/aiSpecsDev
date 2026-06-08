@@ -9,7 +9,7 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: closed item 10 (metadata cleanup)
+Last action: closed item 10 (metadata cleanup) by AI assistant (Cascade)
 
 ## Running dynamAI task: 2b.CloseProjdevItem
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)

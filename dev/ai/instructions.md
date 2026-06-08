@@ -1,5 +1,5 @@
 ## Filename: instructions.md
-## Version: 1.5
+## Version: 1.6
 
 # AI Assistant Instructions
 
@@ -50,6 +50,13 @@ Examples: {owner} = repo owner from projdev.yaml, {repo} = repository name from 
 - 6.2 After any PowerShell command or web call: report in the AI chat what was accomplished (or not)
 - 6.3 When reading instructions: remind user to go to accessibility settings (Ctrl+Shift+P, "open accessibility settings"), search for sound and change auto to on. Then try beep and ask developer if hears. Wait till bell sound is resolved.
 - 6.4 Whenever an action needing developer attention: write message first, then beep 3 times (run [console]::Beep(800, 500) three times). Do NOT write anything after the beep.
+
+## 6.5 AI Attribution
+- 6.5.1 All actions performed by the AI must include attribution: "Action performed by AI assistant (Cascade)"
+- 6.5.2 Include attribution in commit messages: "Commit by AI assistant (Cascade): {message}"
+- 6.5.3 Include attribution in GitHub issue comments: "Comment by AI assistant (Cascade)"
+- 6.5.4 When writing to steps.md from dynamAI tasks, include attribution in the header: "Last action: {action} by AI assistant (Cascade)"
+- 6.5.5 This attribution allows recovery after crashes to understand which actions were performed by AI vs developer
 
 ## 7. Workflow
 

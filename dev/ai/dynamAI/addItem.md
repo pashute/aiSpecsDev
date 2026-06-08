@@ -58,7 +58,7 @@ Reminders:
 
 ### Step 1.0 Record self
 1.0.1 **Record dynamAI task:** write to steps.md:
-`## Running dynamAI task: addItem`
+`## Running dynamAI task: addItem by AI assistant (Cascade)`
 No result checking here. Continue.
 
 1.0.2 Write project info to steps.md:
