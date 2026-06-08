@@ -36,9 +36,19 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
+  num: 10
+  title: fix openClose projman item
+  url: https://github.com/pashute/aiSpecsDev/issues/10
+  state: open
+  stage: backlog
+  milestone: {number: , title: , due: }
+  item_uid: PVTI_lAHOABsSM84BXhNkzguQTLc
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
-parent_item: 
+parent_item:
+  num: 3
+  title: NodeJS
+  url: https://github.com/pashute/aiSpecsDev/issues/3 
 
 
 
@@ -187,7 +197,7 @@ completed_items:
     title: NodeJS
     status: completed
     remarks: Partial close - has open subitem 10 (fix openClose projman item). Commits: 7979da7 (Open item 3), 1b9884a (Add automatic partial detection to closeItem and NodeJS server)
-    has_open_subitems: false
+    has_open_subitems: true
   - num: 7
     title: fix closeItem problem
     status: completed
@@ -197,9 +207,4 @@ completed_items:
     title: fix openItem problem
     status: completed
     remarks: Completed. Commits: 6176fac (Add confirmation.md with CRITICAL HALT instruction and update dynamAI files), f5521e1 (Refine dynamAI confirmation format and stop points), e374b9d (Add confirmation message enhancements to dynamAI workflow)
-    has_open_subitems: false
-  - num: 10
-    title: fix openClose projman item
-    status: completed
-    remarks: Completed. Commits: ff88691 (Add workflow stage fixes and developer assistance dynamAI)
     has_open_subitems: false
