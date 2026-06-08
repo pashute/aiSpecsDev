@@ -9,9 +9,9 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 # Steps for AI:
 
-Last action: opened item 10 and set stage to in progress
+Last action: closed item 10 (metadata cleanup)
 
-## Running dynamAI task: 3.CommitAndPush
+## Running dynamAI task: 2b.CloseProjdevItem
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)
 
 ## workflow stage fix
@@ -35,10 +35,14 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 
 ## fix openClose projman item steps
 
-- [ ] Add closeItem suggestion instructions to 2b.CloseProjdevItem.md (check yaml, then item subitems, then feature subitems, then next feature)
-- [ ] Add openItem failure handling to 2a.OpenProjdevItem.md (if item CLOSED in GitHub but open in yaml and NOT in completed_items: suggest reopen OR move to completed)
-- [ ] Verify feature subitems stages in startFeature/projectDetails (ensure stage tracking works for all subitems)
-- [ ] Move item 5 (templates) to completed_items in projdev.yaml with reason 'not planned' (cancelled)
+- [x] Add closeItem suggestion instructions to 2b.CloseProjdevItem.md (check yaml, then item subitems, then feature subitems, then next feature)
+- [x] Add openItem failure handling to 2a.OpenProjdevItem.md (if item CLOSED in GitHub but open in yaml and NOT in completed_items: suggest reopen OR move to completed)
+- [x] Verify feature subitems stages in startFeature/projectDetails (ensure stage tracking works for all subitems)
+- [x] Move item 5 (templates) to completed_items in projdev.yaml with reason 'not planned' (cancelled)
+
+## Close item 10 steps
+- some steps were skipped in previous run and commit.
+- moved now to end of file for re-doing. 
 
 - [x] 2b.CloseProjdevItem (aborted - need to update yaml with subitem first)
 - [v] Update yaml with item 3's subitem 10
@@ -53,3 +57,31 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [v] 1. install nodejs (already installed v22.20.0)
 - [v] 2. update src to run from a server (created server.js)
 - [v] 3. run and check that all works (server tested successfully at http://localhost:3000/)
+
+- [ ] instruction before closing: 
+go over previous skipped instructions and complete them:
+- [x] Verify all steps are done
+- [x] Verify item stage is in progress
+- [x] Verify all files committed and pushed
+- [ ] Set item stage to done (CRITICAL)
+result:  
+HALT - Problem detected: Item 10 is already closed in GitHub (state: "closed", closed_at: "2026-06-01T00:58:14Z"). The stage mutation succeeded, but the issue was already closed.
+
+Issue status from GitHub:
+
+State: closed
+Closed at: 2026-06-01T00:58:14Z
+Closed by: pashute
+State reason: completed
+Question: Did you manually close item 10 in GitHub? Should I proceed with the metadata update (moving to completed_items in projdev.yaml, updating steps.md) or was this already done?
+
+Developer answer: No you closed it but it failed in the middle. 
+The problems:  
+
+1. ai is listed as doing actions as the developer username and not its own ai username. need to fix that. (part of the new item 10)
+2. errors were not discussed with the developer. need to fix that in the dynamai files. (its part of the new item 10)
+3. recovery and alternatives were not discussed (part of new item 10)
+
+- [x]  Read the instructions file and this steps.md
+- [x]  Read the instructions in item 10's steps on github
+- [x]  Start moving ahead. 
