@@ -42,4 +42,4 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [x] 7. Add openItem failure handling to 2a.OpenProjdevItem.md
 - [x] 8. Verify feature subitems stages
 - [x] 9. Move item 5 to completed_items (already done)
-- [ ] 10. When closing an item update the item's description with checkboxes ticked on what was done 
+- [x] 10. Add instruction to CloseItem.dyn.md to update item description with checkboxes ticked on what was done 
