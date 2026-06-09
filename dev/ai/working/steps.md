@@ -38,4 +38,16 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [x] 12. Delete old .md files (after checking for new code)
 - [x] 13. Check format.header.md references and update instructions.md
 - [x] 14. Move version instructions from format.header to appropriate files (instructions.md, 3.CommitAndPush, 1b.EndFeature)
-- [ ] 15. Stage and commit old file deletions through dynamAI (3.CommitAndPush) 
+- [x] 15. Stage and commit old file deletions through dynamAI (3.CommitAndPush)
+- [x] 16. Correct confirmAction.dyn.md assurance instructions (first confirmation assurance depends on action, no assurance in second confirmation)
+- [x] 17. Disperse format.dynamAI.md:
+  - [x] 17.1 Create format.steps.md (lines 77-117)
+  - [x] 17.2 Create format.itemComment.md (lines 127-144)
+  - [x] 17.3 Update references to new format files
+  - [x] 17.4 Delete format.dynamAI.md
+- [x] 18. Update 1a.StartFeature.dyn.md Developer's Consent step
+- [x] 19. Update 1b.EndFeature.dyn.md Developer's Consent and second confirmation
+- [x] 20. Update confirmAction.dyn.md with new structure
+- [x] 21. Apply consent message footer to all confirmation steps
+- [x] 22. Shorten pseudo sections (remove verifications if in prerequisites)
+- [ ] 23. Commit changes via dynamAI (3.CommitAndPush) 
