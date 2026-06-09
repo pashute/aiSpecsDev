@@ -32,9 +32,13 @@ The AI stays focused, aligned, and waits for the human.
 - 3.4.1 read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.
 - 3.4.2 Write steps according to `format.steps.md` instructions and format
 
-- 3.5 The active item's feature, number, title and details are stored in `dev/ai/working/projdev.yaml`.
-- 3.6 Before doing anything, read `projdev.yaml` first. Always.
+- 3.5 The active item's feature, number, title and details are stored in `dev/ai/working/projmng.yaml`.
+- 3.6 Before doing anything, read `projmng.yaml` first. Always.
 - 3.7 Update the version: When the AI updates a text file it should advance the version. See instructions in formats/format.header.md
+  - Version format is n.n (starting with 0.1)
+  - During development with each file touched by a step in working/steps.md an extra 3rd .n will be added or incremented
+  - During a commit and push all touched files will have the steps sub-version removed and the minor version incremented
+  - When closing a feature the developer will be asked at the beginning of the process and decide if they wish to set all document version numbers to a single major (and perhaps minor) value
 
 ## 4. Typical spelling mistakes
 - When developer referrs to dev branch check with them if they meant the `develop` branch. 

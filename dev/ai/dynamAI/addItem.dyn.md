@@ -1,5 +1,5 @@
 ## Filename: addItem.dyn.md
-**Version:** 0.1.0
+**Version:** 0.1.0.1
 
 # Pseudo:
 Goal: Add a new GitHub project item to the current feature

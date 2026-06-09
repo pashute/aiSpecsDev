@@ -1,5 +1,5 @@
 ## Filename: projmngUpdate.dyn.md
-**Version:** 1.3
+**Version:** 1.3.1
 
 ## Purpose
 Instructions for updating projmng.yaml during the workflow.

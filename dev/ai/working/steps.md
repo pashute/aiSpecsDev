@@ -11,8 +11,15 @@ Reader: [-] deferred, [x] cancelled, [V] no need, [v] done, [=] duplicate, [!] d
 
 Last action: reopened item 10 (metadata fix) by AI assistant (Cascade)
 
-## Running dynamAI task: Manual work on item 10
+## Running dynamAI task: 2b.CloseProjdevItem by AI assistant (Cascade)
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)
+
+## Step 1.0 Record self
+1.0.1 **Record dynamAI task:** write to steps.md:
+`## Running dynamAI task: 2b.CloseProjdevItem by AI assistant (Cascade)`
+
+1.0.2 Write project info to steps.md:
+`Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)`
 
 ## fix openClose projman item steps (reopened)
 
@@ -42,4 +49,11 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [x] 7. Add openItem failure handling to 2a.OpenProjdevItem.md
 - [x] 8. Verify feature subitems stages
 - [x] 9. Move item 5 to completed_items (already done)
-- [x] 10. Add instruction to CloseItem.dyn.md to update item description with checkboxes ticked on what was done 
+- [x] 10. Add instruction to CloseItem.dyn.md to update item description with checkboxes ticked on what was done
+- [x] 11. Update small version on all new files (.dyn and .ai extensions)
+- [x] 12. Handle renamed old files:
+  - [x] 12.1 Before deleting old files check we didn't put new code into them by mistake
+  - [x] 12.2 Delete the old files
+- [x] 13. Versions:
+  - [x] 13.1 Check where format.header.md is called
+  - [x] 13.2 Read instructions section in format.header and update instructions.md and other dyn files accordingly 

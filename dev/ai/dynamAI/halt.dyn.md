@@ -1,5 +1,5 @@
 Filename: halt.dyn.md
-Version: 0.9
+Version: 0.9.1
 
 This procedure is called when a critical error was encountered during a DynamAI action. (start/end feature, open/close item, commit and push)
 
