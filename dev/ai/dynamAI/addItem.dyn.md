@@ -12,26 +12,29 @@ Prerequisites:
 - Developer confirmation before adding item
 - On problems NOTIFY, HALT, and CONSULT
 
-1. Validation:
-1.1. Ask developer for parentNumber (if not provided)
-1.2. Ask developer for featureNumber (if not provided)
-1.3. Verify parent item exists and is open
-1.4. Verify item with same number does not already exist
-1.5. Check for similar items (warn if found)
+Verifications:
+- Ask developer for parentNumber (if not provided)
+- Ask developer for featureNumber (if not provided)
+- Verify parent item exists and is open
+- Verify item with same number does not already exist
+- Check for similar items (warn if found)
 
-2. Action steps:
-2.1. Ask developer for item title
-2.2. Ask developer for item steps (in steps.md format)
-2.3. Create GitHub issue with title and steps
-2.4. Add item to parent's subtasks in projmng.yaml
-2.5. Set item stage to "backlog"
-2.6. Update steps.md with new item steps
+Steps:
+- Ask developer for item title
+- Ask developer for item steps (in steps.md format)
+- Create GitHub issue with title and steps
+- Add item to parent's subtasks in projmng.yaml
+- Set item stage to "backlog"
+- Update steps.md with new item steps
 
-3. Expected Results:
+Results:
 - New GitHub issue created
 - Item added to parent's subtasks in projmng.yaml
 - Item stage set to "backlog"
 - steps.md populated with item steps
+
+Error handling:
+- On error: NOTIFY, HALT, and CONSULT according to halt.dyn.md
 
 # General instructions for this dynamAI task:
 Reminders:
