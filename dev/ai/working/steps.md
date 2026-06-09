@@ -50,4 +50,12 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [x] 20. Update confirmAction.dyn.md with new structure
 - [x] 21. Apply consent message footer to all confirmation steps
 - [x] 22. Shorten pseudo sections (remove verifications if in prerequisites)
-- [ ] 23. Commit changes via dynamAI (3.CommitAndPush) 
+- [x] 23. Commit changes via dynamAI (3.CommitAndPush)
+- [ ] 24. Single-consent change:
+  - [ ] 24.1 Create silentCommitAndPush.dyn.md
+  - [ ] 24.2 Update 1a.StartFeature.dyn.md consent (show subitems state/stage)
+  - [ ] 24.3 Update 1b.EndFeature.dyn.md consent (show closed subitems, add silent commit)
+  - [ ] 24.4 Update 2a.OpenProjdevItem.dyn.md (remove second consent, show steps/subitems)
+  - [ ] 24.5 Update 2b.CloseProjdevItem.dyn.md (show closed steps/subitems, add silent commit)
+  - [ ] 24.6 Update 3.CommitAndPush.dyn.md (merge consents, add silent commit)
+  - [ ] 24.7 Fix all dynamAI last steps to beep and say done 
