@@ -34,11 +34,8 @@ The AI stays focused, aligned, and waits for the human.
 
 - 3.5 The active item's feature, number, title and details are stored in `dev/ai/working/projmng.yaml`.
 - 3.6 Before doing anything, read `projmng.yaml` first. Always.
-- 3.7 Update the version: When the AI updates a text file it should advance the version. See instructions in formats/format.header.md
-  - Version format is n.n (starting with 0.1)
-  - During development with each file touched by a step in working/steps.md an extra 3rd .n will be added or incremented
-  - During a commit and push all touched files will have the steps sub-version removed and the minor version incremented
-  - When closing a feature the developer will be asked at the beginning of the process and decide if they wish to set all document version numbers to a single major (and perhaps minor) value
+- 3.7 Update the version: When the AI updates a text file it should advance the version (format: n.n, see format.header.md)
+- 3.8 During development with each file touched by a step in working/steps.md, increment the 3rd sub-version (e.g., 3.2 → 3.2.1). See format.header.md
 
 ## 4. Typical spelling mistakes
 - When developer referrs to dev branch check with them if they meant the `develop` branch. 

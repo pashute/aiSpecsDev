@@ -56,4 +56,9 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
   - [x] 12.2 Delete the old files
 - [x] 13. Versions:
   - [x] 13.1 Check where format.header.md is called
-  - [x] 13.2 Read instructions section in format.header and update instructions.md and other dyn files accordingly 
+  - [x] 13.2 Read instructions section in format.header and update instructions.md and other dyn files accordingly
+- [ ] 14. Move version instructions from format.header.md to appropriate files:
+  - [ ] 14.1 Update instructions.md with version instructions (3.7, 3.8)
+  - [ ] 14.2 Update 3.CommitAndPush.dyn.md with version update step (before commit)
+  - [ ] 14.3 Update 1b.EndFeature.dyn.md with version consolidation step
+  - [ ] 14.4 Delete instructions section from format.header.md 
