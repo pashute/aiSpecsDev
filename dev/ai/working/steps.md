@@ -115,7 +115,7 @@ See dynamAI/confirmation.md for CRITICAL HALT INSTRUCTION and confirmation forma
   Ask, if not explicitely given the ok to proceed.
 On result:
 - problem: Consult the developer
-- no problem: Close step (developer approved commit and push)
+- no problem: Close step (developer approved commit and push) [v]
 
 ### Step 1.2 Create commit message
 1.2.1 Get the commit hash (will be generated after commit)
@@ -125,7 +125,7 @@ On result:
 1.2.5 Include itemsteps in commit message (see commit.frmt.md)
 On result:
 - problem: Consult the developer
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.3 Show summary to developer
 1.3.1 Display completion table
@@ -133,25 +133,25 @@ On result:
 1.3.3 Display file list secondary (5 files per row max)
 On result:
 - problem: Consult the developer
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.4 Update versions
 1.4.1 Remove the mini version (3rd digit) from all touched files and increment the minor version (e.g., 0.1.8.1 → 0.1.9). See header.frmt.md
 On result:
 - problem: Consult the developer
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.5 Phase 1: Commit all files
 1.5.1 Commit all changes (work files + metadata with completed steps listed): `git commit -m "{commit message}"`
 On result:
 - problem: Consult the developer
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.6 Phase 1: Push
 1.6.1 Push to remote: `git push`
 On result:
 - problem: Consult the developer
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.7 Update projmng.yaml
 1.7.1 Add commit to commits section (see projdev.frmt.md)
@@ -159,7 +159,7 @@ On result:
 1.7.3 Update active_item.steps with completed steps from steps.md
 On result:
 - problem: Consult the developer
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.8 Silent commit and push
 1.8.1 Call silentCommitAndPush.dyn.md for metadata commit
@@ -167,7 +167,7 @@ On result:
 1.8.3 On failure: beep and say "ended with error"
 On result:
 - problem: Error already handled by silentCommitAndPush
-- no problem: Close step
+- no problem: Close step [v]
 
 ### Step 1.9 Add comment to project item
 1.9.1 Add comment to the GitHub project item (see itemComment.frmt.md):
@@ -182,4 +182,99 @@ On result:
 1.9.6 Beep and say "done"
 On result:
 - problem: Consult the developer
-- no problem: Close step 
+- no problem: Close step [v]
+
+## Running dynamAI task: 2b.CloseProjdevItem by AI assistant (Cascade)
+Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)
+
+### Step 1.0 Record self
+1.0.1 **Record dynamAI task:** write to steps.md:
+`## Running dynamAI task: 2b.CloseProjdevItem by AI assistant (Cascade)`
+1.0.2 Write project info to steps.md:
+`Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)`
+
+### Step 1.1 First confirmation (item close)
+See dynamAI/confirmation.md for CRITICAL HALT INSTRUCTION and confirmation format.
+
+1.1.1 Write consent step to steps.md:
+    - Get current steps.md step number (next available number)
+    - Write to steps.md: "- [ ] {num} Get developer consent for 2b.CloseProjdevItem"
+    - DO NOT write further dyn steps to steps.md until consent is received
+
+1.1.2 **Display confirmation question** (see confirmAction.frmt.md):
+  - 3 beeps
+  - "Close Item {itemNum} requested"
+  - "Closed steps: {md steps from steps.md}"
+  - "Closed subitems: {md subitem number.name list from projmng.yaml completed_items}"
+  - "Proceed?"
+  DO NOT PROCEED WITHOUT DEVELOPER'S OK
+  If developer discusses, stay halted till ok or rejection given.
+  Ask, if not explicitely given the ok to proceed.
+On result:
+- problem: Consult the developer
+- no problem: Close step (developer approved item close) [v]
+
+### Step 1.2 Validate current item
+1.2.1 Read projmng.yaml to get active_item
+1.2.2 Verify active_item matches item to close
+1.2.3 If mismatch: Consult developer
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.3 Verify steps done
+1.3.1 Read steps.md to verify all steps are marked as done
+1.3.2 If any step not done: Consult developer
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.4 Determine close reason
+1.4.1 Ask developer for close reason (completed, cancelled, deferred, duplicate)
+1.4.2 Record close reason
+On result:
+- problem: Consult the developer
+- no problem: Close step [v] - developer selected: completed
+
+### Step 1.5 Close the item
+1.5.1 Use aiCode/itemClose.md to close the GitHub item
+1.5.2 Input: owner, repo, itemNum, close_reason
+1.5.3 Verify item closed successfully
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.6 Update projmng.yaml for partial close
+1.6.1 Move active_item to completed_items section
+1.6.2 Add completed_at timestamp
+1.6.3 Add close_reason
+1.6.4 Add remarks if any
+1.6.5 Clear active_item section
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.7 Set item stage to Done
+1.7.1 Use aiCode/itemStage.md to set item stage to "Done"
+1.7.2 Verify stage set successfully
+On result:
+- problem: ERROR: Could not resolve to a node with the global id of 'PVTI_lAHOABsSM84BXhNkzzguQTLc' - item was closed before stage was set. Halt and consult developer.
+- no problem: Close step
+
+### Step 1.8 Silent commit and push
+1.8.1 Call silentCommitAndPush.dyn.md for metadata commit
+1.8.2 On success: beep and say "done"
+1.8.3 On failure: beep and say "ended with error"
+On result:
+- problem: Error already handled by silentCommitAndPush
+- no problem: Close step [v]
+
+### Step 1.9 Suggest next item
+1.9.1 Check projmng.yaml for next item in priority order
+1.9.2 If none, check item's subitems for next open item
+1.9.3 If none, check feature's subitems for next open item
+1.9.4 If none, check for next feature in backlog
+1.9.5 Display suggestion to developer
+On result:
+- problem: Consult the developer
+- no problem: Close step [v] 

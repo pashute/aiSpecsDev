@@ -36,22 +36,6 @@ feature:
 
 # active_item: current item being worked on.
 active_item:
-  num: 10
-  title: fix openClose projman item
-  url: https://github.com/pashute/aiSpecsDev/issues/10
-  state: open
-  stage: backlog
-  milestone: {number: , title: , due: }
-  item_uid: PVTI_lAHOABsSM84BXhNkzzguQTLc
-  subitems: []
-  steps:
-    - "[v] 1. reset active item - from error."
-    - "[ ] 2. debug dev-consent not being requested. Simulate, no code changes. if steps.md had an instruction that modified a file's version and then dyn commit (not silent). Is there a waiting developer consent stage at the beginning and is it clear?"
-    - "[ ] 3. datetime for completed item (closeItem.dyn)"
-    - "[ ] 4. subitems field (openItem.dyn instructions + projmng quickfix)"
-    - "[ ] 5. feature: ai ui for steps consolidation"
-    - "[ ] 6. feature: ren project? specsdev.AI"
-    - "[ ] 7. vscode-extensionize specsdev.AI"
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item:
@@ -68,6 +52,22 @@ parent_item:
 #   example detail:  "line 23. added missing initialization"
 #   example change:  "line 44. removed redundant section"
 commits:
+  - hash: e52ee15
+    headline: Reorganize DynamAI files and update references
+    details:
+      - Created tunes.ai.md with sound effect definitions
+      - Moved 5 action dyn files to dynamai/actions/ folder
+      - Moved 5 helper dyn files to dynamai/helper/ folder
+      - Renamed instructions.md to instructions.dyn.md
+      - Renamed 9 format files from format.{section}.md to {section}.frmt.md
+      - Updated all references to renamed files across codebase
+      - Updated projmng.yaml and vanilla/projmng.yaml filename headers
+      - Updated 1b.EndFeature.dyn.md to use featureEnd.frmt.md for closing remark
+      - Updated 2a.OpenProjdevItem.dyn.md to use itemParams.ai.md when only item number provided
+      - Removed remarks from featureEnd.frmt.md, projectSame.ai.md, itemParams.ai.md
+      - Increased mini versions on all touched dyn files
+      - Created tempReport.md with unused files analysis
+    filechanges: dev/ai/dynamAI/actions/, dev/ai/dynamAI/formats/, dev/ai/dynamAI/helper/, dev/ai/instructions.dyn.md, dev/ai/tunes.ai.md, dev/ai/vanilla/projmng.yaml, dev/ai/working/tempReport.md, dev/ai/working/projmng.yaml, dev/ai/working/steps.md
   - hash: 6176fac
     headline: Add confirmation.md with CRITICAL HALT instruction and update dynamAI files
     details:
@@ -197,6 +197,12 @@ commits:
 # completed_items: closed items in this feature.
 # each item has: num, title, status, remarks, has_open_subitems, completed_at
 completed_items:
+  - num: 10
+    title: fix openClose projman item
+    status: completed
+    remarks: All ad-hoc fixes completed. Files reorganized, references updated, mini versions incremented.
+    has_open_subitems: false
+    completed_at: 2026-06-10T04:48:10Z
   - num: 5
     title: templates
     status: completed
