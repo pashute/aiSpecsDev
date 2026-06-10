@@ -200,9 +200,9 @@ completed_items:
   - num: 10
     title: fix openClose projman item
     status: completed
-    remarks: All ad-hoc fixes completed. Files reorganized, references updated, mini versions incremented.
+    remarks: All ad-hoc fixes completed. Files reorganized, references updated, mini versions incremented. Fixed closeItem order to set stage before closing.
     has_open_subitems: false
-    completed_at: 2026-06-10T04:48:10Z
+    completed_at: 2026-06-10T04:54:39Z
   - num: 5
     title: templates
     status: completed
