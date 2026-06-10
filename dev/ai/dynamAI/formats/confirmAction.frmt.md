@@ -1,4 +1,4 @@
-## Filename: format.confirmAction.md
+## Filename: confirmAction.frmt.md
 **Version:** 1.0
 
 # Confirmation Action Format

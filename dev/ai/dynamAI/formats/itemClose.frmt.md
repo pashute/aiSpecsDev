@@ -1,4 +1,4 @@
-## Filename: format.itemClose.md
+## Filename: itemClose.frmt.md
 ## Version: 1.1
 ### Closing comment format for GitHub issues
 

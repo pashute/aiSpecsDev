@@ -1,5 +1,5 @@
-## Filename: instructions.md
-## Version: 1.6
+## Filename: instructions.dyn.md
+## Version: 1.6.1
 
 # AI Assistant Instructions
 
@@ -30,21 +30,21 @@ The AI stays focused, aligned, and waits for the human.
 - 3.3 Long answers go to `dev/ai/working/ai-draft.md`, broken into parts shown one at a time.
 - 3.4 use `dev/ai/working/steps.md`
 - 3.4.1 read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.
-- 3.4.2 Write steps according to `format.steps.md` instructions and format
+- 3.4.2 Write steps according to `steps.frmt.md` instructions and format
 
 - 3.5 The active item's feature, number, title and details are stored in `dev/ai/working/projmng.yaml`.
 - 3.6 Before doing anything, read `projmng.yaml` first. Always.
-- 3.7 Update the version: When the AI updates a text file it should advance the version (format: n.n, see format.header.md)
-- 3.8 During development with each file touched by a step in working/steps.md, increment the 3rd sub-version (e.g., 3.2 → 3.2.1). See format.header.md
+- 3.7 Update the version: When the AI updates a text file it should advance the version (format: n.n, see header.frmt.md)
+- 3.8 During development with each file touched by a step in working/steps.md, increment the 3rd sub-version (e.g., 3.2 → 3.2.1). See header.frmt.md
 
 ## 4. Typical spelling mistakes
 - When developer referrs to dev branch check with them if they meant the `develop` branch. 
-- When the developer asks to check in, to close, to commit, or to push, please check if this means to both commit locally and push the code to the gitflow branch on github. In any case use the relevant parts of `/dev/ai/dynamAI/3.CommitAndPush` so that every commit has a projdev item and a comprehensive list of changes, and the item has a comprehensive short list of commits and changes. 
+- When the developer asks to check in, to close, to commit, or to push, please check if this means to both commit locally and push the code to the gitflow branch on github. In any case use the relevant parts of `/dev/ai/dynamAI/3.CommitAndPush` so that every commit has a projmng item and a comprehensive list of changes, and the item has a comprehensive short list of commits and changes. 
 
 ## 5. Variable notation
-{varname} indicates a variable whose value is either known from projdev.yaml or retrieved through a PowerShell command.
+{varname} indicates a variable whose value is either known from projmng.yaml or retrieved through a PowerShell command.
 Note: This is called "variable notation" or "placeholder syntax" (not mustache code).
-Examples: {owner} = repo owner from projdev.yaml, {repo} = repository name from projdev.yaml, {featurename} = feature name, {projectID} = GitHub Project V2 ID, {itemnum} = item number
+Examples: {owner} = repo owner from projmng.yaml, {repo} = repository name from projmng.yaml, {featurename} = feature name, {projectID} = GitHub Project V2 ID, {itemnum} = item number
 
 ## 6. PowerShell Commands and Web Calls
 - 6.1 Before any PowerShell command or web call: announce in the AI chat what you are doing and why

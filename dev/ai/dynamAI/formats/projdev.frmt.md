@@ -1,6 +1,6 @@
-## Filename: format.projdev.md
+## Filename: projdev.frmt.md
 ## Version: 1.5
-### Schema for projdev.yaml
+### Schema for projmng.yaml
 project:  
   owner, repo
 

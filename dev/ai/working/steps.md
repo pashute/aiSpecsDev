@@ -14,7 +14,7 @@ Last action: reopened item 10 (metadata fix) by AI assistant (Cascade)
 ## Running dynamAI task: 2b.CloseProjdevItem by AI assistant (Cascade)
 Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)
 
-## Step 1.0 Record self
+### Step 1.0 Record self
 1.0.1 **Record dynamAI task:** write to steps.md:
 `## Running dynamAI task: 2b.CloseProjdevItem by AI assistant (Cascade)`
 
@@ -36,13 +36,13 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [x] 10. Add instruction to CloseItem.dyn.md for item description updates
 - [x] 11. Update small version on all new files (.dyn and .ai)
 - [x] 12. Delete old .md files (after checking for new code)
-- [x] 13. Check format.header.md references and update instructions.md
+- [x] 13. Check header.frmt.md references and update instructions.md
 - [x] 14. Move version instructions from format.header to appropriate files (instructions.md, 3.CommitAndPush, 1b.EndFeature)
 - [x] 15. Stage and commit old file deletions through dynamAI (3.CommitAndPush)
 - [x] 16. Correct confirmAction.dyn.md assurance instructions (first confirmation assurance depends on action, no assurance in second confirmation)
 - [x] 17. Disperse format.dynamAI.md:
-  - [x] 17.1 Create format.steps.md (lines 77-117)
-  - [x] 17.2 Create format.itemComment.md (lines 127-144)
+  - [x] 17.1 Create steps.frmt.md (lines 77-117)
+  - [x] 17.2 Create itemComment.frmt.md (lines 127-144)
   - [x] 17.3 Update references to new format files
   - [x] 17.4 Delete format.dynamAI.md
 - [x] 18. Update 1a.StartFeature.dyn.md Developer's Consent step
@@ -51,11 +51,135 @@ Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item
 - [x] 21. Apply consent message footer to all confirmation steps
 - [x] 22. Shorten pseudo sections (remove verifications if in prerequisites)
 - [x] 23. Commit changes via dynamAI (3.CommitAndPush)
-- [ ] 24. Single-consent change:
-  - [ ] 24.1 Create silentCommitAndPush.dyn.md
-  - [ ] 24.2 Update 1a.StartFeature.dyn.md consent (show subitems state/stage)
-  - [ ] 24.3 Update 1b.EndFeature.dyn.md consent (show closed subitems, add silent commit)
-  - [ ] 24.4 Update 2a.OpenProjdevItem.dyn.md (remove second consent, show steps/subitems)
-  - [ ] 24.5 Update 2b.CloseProjdevItem.dyn.md (show closed steps/subitems, add silent commit)
-  - [ ] 24.6 Update 3.CommitAndPush.dyn.md (merge consents, add silent commit)
-  - [ ] 24.7 Fix all dynamAI last steps to beep and say done 
+- [x] 24. Single-consent change:
+  - [x] 24.1 Create silentCommitAndPush.dyn.md
+  - [x] 24.2 Update 1a.StartFeature.dyn.md consent (show subitems state/stage)
+  - [x] 24.3 Update 1b.EndFeature.dyn.md consent (show closed subitems, add silent commit)
+  - [x] 24.4 Update 2a.OpenProjdevItem.dyn.md (remove second consent, show steps/subitems)
+  - [x] 24.5 Update 2b.CloseProjdevItem.dyn.md (show closed steps/subitems, add silent commit)
+  - [x] 24.6 Update 3.CommitAndPush.dyn.md (merge consents, add silent commit)
+  - [x] 24.7 Fix all dynamAI last steps to beep and say done
+
+### Ad-hoc fixes: Wait for developer's command for each:
+- [v] 1. reset active item - from error.
+- [v] 2. debug dev-consent not being requested. Simulate, no code changes.
+     if steps.md had an instruction that modified a file's version
+     and then "dyn commit (not silent)"
+     Is there a waiting developer consent stage at the beginning and is it clear?
+     Result: fixed dev-consent recorded as step with id (step number)
+- [v] 2.1 consent step instruction in steps.md ([v] 1a, [v] 1b, [v] 2a, [v] 2b, [v] 3)
+- [v] 3. datetime for completed item (closeItem.dyn)
+  - [v] 3.1 projdev -> projmng and mini version
+  - [v] 3.1.1 rename in vanilla/ folder projdev.yaml to projmng.yaml
+  - [v] 3.1.2 increase mini version
+  - [v] 3.1.3 rename 3rd version digit as "mini version" (iteration number) wherever instructed. (2 dyn files)
+  - [v] 3.2 the completed time field for items completed in the vanilla/projmng.yaml
+- [x] 4. subitems field ([x] openItem.dyn instructions + [x] projmng quickfix)
+- [x] 5. feature: ai ui for steps consolidation (specsdev.ai)
+- [x] 6. feature: ren project? specsdev.ai
+- [x] 7. feature: bugfix items (option in yaml if is bugfix or feature, branchname fix/...)
+- [x] 8. feature: vscode-extensionize specsdev.ai
+- [x] 9. feature: tunes.ai (success: ta da da, fail: wa wa wa, warn: SOS)
+- [x] 10. dev folder and file organize
+  - [x] 10.1 make and move to folder dynamai/actions/ the 5 action dyn files there
+  - [x] 10.2 make and move to folder dynamai/helper/ the rest of the dyn files
+  - [x] 10.3 rename instructions.md to instructions.dyn.md and update all refs
+  - [x] 10.4 rename in formats/ folder all format.{section}.md to {section}.frmt.md and update all refs
+  - [x] 10.5 find unused files and unused sections and mark them with remark
+- [v] 11. Get developer consent for 3.CommitAndPush (commit and push)
+## Running dynamAI task: 3.CommitAndPush by AI assistant (Cascade)
+Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)
+
+### Step 1.0 Record self
+1.0.1 **Record dynamAI task:** write to steps.md:
+`## Running dynamAI task: 3.CommitAndPush by AI assistant (Cascade)`
+1.0.2 Write project info to steps.md:
+`Project info: aiSpecsDev, feature/WriteSomeSpecs, [10.fix openClose projman item](https://github.com/pashute/aiSpecsDev/issues/10)`
+
+### Step 1.1 Single confirmation (commit)
+See dynamAI/confirmation.md for CRITICAL HALT INSTRUCTION and confirmation format.
+
+1.1.1 Display feature/item and steps done from steps.md and projmng.yaml
+1.1.2 Write consent step to steps.md:
+    - Get current steps.md step number (next available number)
+    - Write to steps.md: "- [ ] {num} Get developer consent for 3.CommitAndPush"
+    - DO NOT write further dyn steps to steps.md until consent is received
+
+1.1.3 **Display confirmation question** (see confirmAction.frmt.md):
+  - 3 beeps
+  - "Feature: {feature.name} Item: {active_item.num}.{active_item.title}"
+  - "Steps done: {md steps from steps.md}"
+  - "Commit only or commit and push?"
+  DO NOT PROCEED WITHOUT DEVELOPER'S OK
+  If developer discusses, stay halted till ok or rejection given.
+  Ask, if not explicitely given the ok to proceed.
+On result:
+- problem: Consult the developer
+- no problem: Close step (developer approved commit and push)
+
+### Step 1.2 Create commit message
+1.2.1 Get the commit hash (will be generated after commit)
+1.2.2 Give the commit a headline
+1.2.3 Give short details
+1.2.4 List files (path) and changes
+1.2.5 Include itemsteps in commit message (see commit.frmt.md)
+On result:
+- problem: Consult the developer
+- no problem: Close step
+
+### Step 1.3 Show summary to developer
+1.3.1 Display completion table
+1.3.2 Display commit message (headline + details first - WHAT was done)
+1.3.3 Display file list secondary (5 files per row max)
+On result:
+- problem: Consult the developer
+- no problem: Close step
+
+### Step 1.4 Update versions
+1.4.1 Remove the mini version (3rd digit) from all touched files and increment the minor version (e.g., 0.1.8.1 → 0.1.9). See header.frmt.md
+On result:
+- problem: Consult the developer
+- no problem: Close step
+
+### Step 1.5 Phase 1: Commit all files
+1.5.1 Commit all changes (work files + metadata with completed steps listed): `git commit -m "{commit message}"`
+On result:
+- problem: Consult the developer
+- no problem: Close step
+
+### Step 1.6 Phase 1: Push
+1.6.1 Push to remote: `git push`
+On result:
+- problem: Consult the developer
+- no problem: Close step
+
+### Step 1.7 Update projmng.yaml
+1.7.1 Add commit to commits section (see projdev.frmt.md)
+1.7.2 Update active_item.stage to "in review"
+1.7.3 Update active_item.steps with completed steps from steps.md
+On result:
+- problem: Consult the developer
+- no problem: Close step
+
+### Step 1.8 Silent commit and push
+1.8.1 Call silentCommitAndPush.dyn.md for metadata commit
+1.8.2 On success: beep and say "done"
+1.8.3 On failure: beep and say "ended with error"
+On result:
+- problem: Error already handled by silentCommitAndPush
+- no problem: Close step
+
+### Step 1.9 Add comment to project item
+1.9.1 Add comment to the GitHub project item (see itemComment.frmt.md):
+  - {commit_hash}: Phase 1 commit hash
+  - {commit_url}: Full GitHub commit URL
+  - {telegraphic_summary}: Brief summary of changes
+  - {question}: "Commit only or commit and push?" (already answered, use same response)
+1.9.2 Use aiCode/itemComment.md to add comment
+1.9.3 Input: owner, repo, itemNum, comment
+1.9.4 Retrieve the comment URL from the response
+1.9.5 Show the developer the link to the created comment
+1.9.6 Beep and say "done"
+On result:
+- problem: Consult the developer
+- no problem: Close step 

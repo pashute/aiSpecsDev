@@ -1,4 +1,4 @@
-## Filename: itemParams.md
+## Filename: itemParams.ai.md
 ## Version: 1.0.1
 ### Fetch GitHub item simple parameters (item number, title and url)
 

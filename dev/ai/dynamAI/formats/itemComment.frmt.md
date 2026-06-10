@@ -1,4 +1,4 @@
-## Filename: format.itemComment.md
+## Filename: itemComment.frmt.md
 **Version:** 1.0
 
 # GitHub Issue Comment Format

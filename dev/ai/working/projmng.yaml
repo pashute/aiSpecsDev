@@ -1,5 +1,5 @@
 ```yaml
-# Filename: projdev.yaml
+# Filename: projmng.yaml
 # Version: 1.3
 # Updated at: feature start, item open, commit/push, item close, feature end.
 
@@ -42,7 +42,16 @@ active_item:
   state: open
   stage: backlog
   milestone: {number: , title: , due: }
-  item_uid: PVTI_lAHOABsSM84BXhNkzguQTLc
+  item_uid: PVTI_lAHOABsSM84BXhNkzzguQTLc
+  subitems: []
+  steps:
+    - "[v] 1. reset active item - from error."
+    - "[ ] 2. debug dev-consent not being requested. Simulate, no code changes. if steps.md had an instruction that modified a file's version and then dyn commit (not silent). Is there a waiting developer consent stage at the beginning and is it clear?"
+    - "[ ] 3. datetime for completed item (closeItem.dyn)"
+    - "[ ] 4. subitems field (openItem.dyn instructions + projmng quickfix)"
+    - "[ ] 5. feature: ai ui for steps consolidation"
+    - "[ ] 6. feature: ren project? specsdev.AI"
+    - "[ ] 7. vscode-extensionize specsdev.AI"
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item:
@@ -186,25 +195,29 @@ commits:
 
 
 # completed_items: closed items in this feature.
-# each item has: num, title, status, remarks, has_open_subitems
+# each item has: num, title, status, remarks, has_open_subitems, completed_at
 completed_items:
   - num: 5
     title: templates
     status: completed
     remarks: Not planned (cancelled)
     has_open_subitems: false
+    completed_at: 2026-05-30T16:29:03Z
   - num: 3
     title: NodeJS
     status: completed
     remarks: Partial close - has open subitem 10 (fix openClose projman item). Commits: 7979da7 (Open item 3), 1b9884a (Add automatic partial detection to closeItem and NodeJS server)
     has_open_subitems: true
+    completed_at: 2026-05-30T16:29:03Z
   - num: 7
     title: fix closeItem problem
     status: completed
     remarks: Partial close - has open subitem 8 (fix openItem problem). Commits: 43bfa98 (feature/WriteSomeSpecs dynamAI workflow refactoring)
     has_open_subitems: true
+    completed_at: 2026-05-30T16:29:03Z
   - num: 8
     title: fix openItem problem
     status: completed
     remarks: Completed. Commits: 6176fac (Add confirmation.md with CRITICAL HALT instruction and update dynamAI files), f5521e1 (Refine dynamAI confirmation format and stop points), e374b9d (Add confirmation message enhancements to dynamAI workflow)
     has_open_subitems: false
+    completed_at: 2026-05-30T16:29:03Z

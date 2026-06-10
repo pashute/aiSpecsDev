@@ -67,7 +67,7 @@ go to 1b. End Feature dynamAI
 - Record steps.md step completion status ([-] deferred, [x] cancelled, [V] no need, [v] done, [!] discuss)
 
 ### On Commit and Push
-- Log commit details in commits section (see format.projdev.md for schema)
+- Log commit details in commits section (see projdev.frmt.md for schema)
 - Verification steps (see 3.CommitAndPush.md for commands):
   - Verify commit succeeded with `git log -1 --format="%H %s"`
   - Get commit URL: https://github.com/{owner}/{repo}/commit/{hash}
@@ -75,4 +75,4 @@ go to 1b. End Feature dynamAI
   - Get GitHub commit URL: https://github.com/{owner}/{repo}/commit/{hash}
 
 ### Format
-- projmng.yaml schema is listed in /dev/ai/dynamAI/formats/format.projdev.md with each field's explanation.
+- projmng.yaml schema is listed in /dev/ai/dynamAI/formats/projdev.frmt.md with each field's explanation.

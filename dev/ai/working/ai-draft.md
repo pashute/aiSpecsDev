@@ -29,7 +29,7 @@
 **step 2.1 Handle parent progress**
 - Save current steps.md progress to parent_item.steps_progress if needed
 
-**step 2.2 Update projdev.yaml**
+**step 2.2 Update projmng.yaml**
 - Set active_item to item 10 (num, title, url, state, stage, milestone)
 - Set parent_item to item 3 (num, title, url)
 

@@ -32,14 +32,14 @@ Error handling:
 
 # General instructions for this dynamAI task:
 Reminders:
-- See ai/instructions.md section 2.2. Specifically:
+- See ai/instructions.dyn.md section 2.2. Specifically:
   - Discuss with the developer includes waiting for their response.
   - Stop execution if something is wrong.
   - On error NOTIFY, HALT, and CONSULT according to `halt.dyn.md`
 
-- See formats/format.steps.md for instructions about writing to steps.md file
+- See formats/steps.frmt.md for instructions about writing to steps.md file
 
-- See formats/format.steps.md for instructions to close a step
+- See formats/steps.frmt.md for instructions to close a step
 (steps.md, notify developer)
 
 - This task is NOT listed in steps.md

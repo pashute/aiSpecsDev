@@ -1,4 +1,4 @@
-## Filename: format.hereString.md
+## Filename: hereString.frmt.md
 ## Version: 1.0
 
 ### PowerShell here-string format

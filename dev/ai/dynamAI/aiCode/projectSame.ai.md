@@ -1,4 +1,4 @@
-## Filename: projectSame.md
+## Filename: projectSame.ai.md
 ## Version: 1.0.1
 ### Check if requested project matches stored project
 

@@ -17,4 +17,4 @@ SOME ACTIONS HAVE TWO CONFIRMATIONS. THE OK FOR ONE IS NOT AN OK FOR THE NEXT.
 - The calling .dyn file builds and provides the actual confirmation message
 - This procedure handles beep, display, and waiting for approval
 - No output or error handling in this procedure
-- See format.confirmAction.md for message structure guidelines
+- See confirmAction.frmt.md for message structure guidelines

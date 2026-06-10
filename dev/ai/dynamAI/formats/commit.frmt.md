@@ -1,4 +1,4 @@
-## Filename: format.commit.md
+## Filename: commit.frmt.md
 ## Version: 1.5
 ### Commit message format for projdev.yaml
 

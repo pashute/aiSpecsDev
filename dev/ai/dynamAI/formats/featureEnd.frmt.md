@@ -1,4 +1,4 @@
-## Filename: format.featureEnd.md
+## Filename: featureEnd.frmt.md
 ## Version: 1.0
 ### Feature end summary format
 

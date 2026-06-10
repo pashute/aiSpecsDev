@@ -1,5 +1,5 @@
 ```yaml
-# Filename: projdev.yaml
+# Filename: projmng.yaml
 # Version: 1.3
 # Updated at: feature start, item open, commit/push, item close, feature end.
 
@@ -51,7 +51,7 @@ parent_item:
 commits:
 
 # completed_items: closed items in this feature.
-# each item has: num, title, status, remarks, has_open_subitems
+# each item has: num, title, status, remarks, has_open_subitems, completed_at
 # IMPORTANT: Only include items that are done or deferred
 # has_open_subitems: true if item closed but still has open subitems (partial close)
 completed_items:
