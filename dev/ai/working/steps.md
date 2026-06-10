@@ -277,4 +277,128 @@ On result:
 1.9.5 Display suggestion to developer
 On result:
 - problem: Consult the developer
+- no problem: Close step [v]
+
+## Running dynamAI task: 1b.EndFeature by AI assistant (Cascade)
+Project info: aiSpecsDev, feature/WriteSomeSpecs
+
+### Step 1.0 Record self
+1.0.1 **Record dynamAI task:** write to steps.md:
+`## Running dynamAI task: 1b.EndFeature by AI assistant (Cascade)`
+No result checking here. Continue.
+
+### Step 1.1 Version consolidation
+1.1.1 Look at version numbers and propose a new version (keep major and next minor)
+1.1.2 If the versions are diverse, discuss it with the developer
+1.1.3 If the user gives a new version number:
+  a. Report version step in steps.md
+  b. Change version in files
+  c. Mark done in steps.md
+  d. Commit and push via dynamAI (3.CommitAndPush)
+  e. Continue here
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.2 Developer's Consent
+Verifications:
+  - Read steps.md and projmng.yaml
+  - All listed items in steps.md are marked done
+  - All items in projmng.yaml completed_items
+  - feature.item has no open subitems (according to the yaml)
+
+1.2.1  Write consent step to steps.md:
+    - Get current steps.md step number (next available number)
+    - Write to steps.md: "- [ ] {num} Get developer consent for 1b.EndFeature"
+    - DO NOT write further dyn steps to steps.md until consent is received
+
+1.2.2  Show Developer-Consent message:
+    - 3 beeps
+    - "Closing Feature WriteSomeSpecs"
+    - "Closed subitems: {md subitem number.name list with url links}"
+    - "Proceed?"
+
+DO NOT PROCEED WITHOUT DEVELOPER'S OK
+If developer discusses, stay halted till ok or rejection given.
+Ask if not explicitely given the ok to proceed.
+On result:
+- problem: Consult the developer
+- no problem: Close step (developer approved feature end) [v]
+
+### Step 1.3 Verify feature branch is clean
+1.3.1 Check for uncommitted files: `git status --porcelain`
+1.3.2 If uncommitted files exist:
+  - Warn developer that feature branch is not clean
+  - Consult developer: should we commit before proceeding?
+  - If developer agrees: commit via dynamAI (3.CommitAndPush)
+  - If developer declines: halt and wait for instruction
+1.3.3 Verify all files pushed: `git status -sb`
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.4 Confirm current branch
+1.4.1 Check current branch: `git branch --show-current`
+1.4.2 Verify it matches feature.branch from projmng.yaml
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.5 Switch to develop branch
+1.5.1 Switch to develop branch: `git checkout develop`
+1.5.2 Pull latest changes: `git pull`
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.6 Merge feature branch to develop
+1.6.1 Merge feature branch: `git merge {feature.branch}`
+1.6.2 Resolve any merge conflicts if they occur
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.7 Push develop branch
+1.7.1 Push develop branch: `git push`
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.8 Delete feature branch (local and remote)
+1.8.1 Delete local feature branch: `git branch -d {feature.branch}`
+1.8.2 Delete remote feature branch: `git push origin --delete {feature.branch}`
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 1.9 Update projmng.yaml
+1.9.1 Clear feature section
+1.9.2 Clear active_item section
+1.9.3 Clear parent_item section
+1.9.4 Clear commits section
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 2.0 Add closing remark to feature item
+2.0.1 Use featureEnd.frmt.md to create closing remark
+2.0.2 Add closing remark to GitHub feature item description
+2.0.3 Verify remark added successfully
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 2.1 Clear steps.md
+2.1.1 Clear all content from steps.md
+2.1.2 Add header for next feature
+On result:
+- problem: Consult the developer
+- no problem: Close step [v]
+
+### Step 2.2 Silent commit and push
+2.2.1 Call silentCommitAndPush.dyn.md for metadata commit
+2.2.2 On success: beep and say "done"
+2.2.3 On failure: beep and say "ended with error"
+On result:
+- problem: Error already handled by silentCommitAndPush
 - no problem: Close step [v] 
