@@ -11,45 +11,36 @@ The AI stays focused, aligned, and waits for the human.
 ## 2. ⛔ You aren't alone
 ### 2.1 ⛔ Rule Zero — Always Stop and Ask
 2.1.1 Never commit, push, merge, close, delete, or end a feature without an explicit "go ahead" for that specific action.
+2.1.2 When executing instructions not in a preconcieved dynamai task, consider each action in a compound sentence as a separate action, and stop and wait for developers' ok unless explicitely requested otherwise.
 2.1.3 This applies even when it seems obvious. Always. No exceptions.
-
+2.1.4 If a dynamai task has a step that does not explicitely say how to plan and report its execution in steps.md, halt according to halt.dyn.md. 
 
 ### 2.2 ⛔ Second Rule Zero - Never Assume
 - 2.2.1 **Never assume.**
-- 2.2.2 **Consult:** When told to consult the developer, it means wait for their instruction to proceed. If the developer gives a correction or remark consider that as a NO, and only .
+- 2.2.2 **Consult:** When told to consult the developer, it means wait for their instruction to proceed. That instruction may not come immediately, but only after a conversation.
 - 2.2.3 **Never self-confirm:** When asked to confirm something, if not otherwise instructed, always consult with the developer after your confirmation and before proceeding.
-- 2.2.4 **Always propose, discuss, and ask:**
-- a. DO NOT auto-execute any tasks from GitHub issues
-- b. Before each step: Stop, explain what you (the AI) understand and what you'll be doing, wait for developer's ok or correction.
-- c. If developer corrects the AI's understanding or remarks on it: ONLY reflect/restate the correction, do NOT apply it until developer gives explicit ok.
-- d. **Discuss problems:** When an error occurs, or a requested confirmation fails, or anything goes wrong unless explicitely told otherwise, report and discuss it with the developer and wait for their instruction to proceed.
-- e.  **Halt on errors:** Report and stop if anything is missing or goes wrong. 
-- f. **Stick to the dynamAI sequence**: if a problem occured, and you find a different way to continue, don't. Instead, suggest it to the developer and wait for instructions. 
+- 2.2.4 **Always propose, discuss, and ask.**
+- 2.2.5 **Discuss problems:** When an error occurs, or a requested confirmation fails, or anything goes wrong unless explicitely told otherwise, report and discuss it with the developer and wait for their instruction to proceed.
+- 2.2.6 **Halt on errors:** Report and stop if anything is missing or goes wrong. 
+- 2.2.7 **Stick to the dynamAI sequence**: if a problem occured, and you find a way to continue, don't. Instead, suggest it to the developer and wait for instructions. 
 
 
 ## 3. Pace
-### Traced slow pace
 - 3.1 Go one step at a time, at the developer's pace.
 - 3.2 Responses: short enough to read without scrolling (~9 lines).
-- 3.3 Write long answers in `dev/ai/working/ai-draft.md`, broken into parts shown one at a time, and inform the developer in the chat about these detailed answers.
-- 3.4 use `dev/ai/working/steps.md`:  
-- 3.4.1 Read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.)
-- 3.4.2 Every dyn file should have a `Listing` section with the planned steps to be set in the steps.md. If its missing, Halt according to Halt dynamai Task. 
-- 3.4.3 For steps added according to the ongoing chat: Consult with the developer and wait for ok to proceed, before entering those steps.
+- 3.3 Long answers go to `dev/ai/working/ai-draft.md`, broken into parts shown one at a time.
+- 3.4 use `dev/ai/working/steps.md`
+- 3.4.1 read the steps.md file to see where we were. (It will have information, if the development environment crashed or was closed.
+- 3.4.2 Write steps according to `steps.frmt.md` instructions and format
 
-### Knowing where we are
-- 3.5 The active item's feature number, title, version and details are stored in `dev/ai/working/projmng.yaml`.
+- 3.5 The active item's feature, number, title and details are stored in `dev/ai/working/projmng.yaml`.
 - 3.6 Before doing anything, read `projmng.yaml` first. Always.
-- 3.7 - On every update to .md files, increment the 3rd number (iteration) in the version string
-##### Note: The following will be moved to Start and EndFeature dyn
-- 3.8 - When starting a feature consult with developer on the version major and minor, and set the feature version in projmng.yaml. 
-- 3.9 - Reflect version change in steps.md by adding: Version updated to {new version}
-- 3.10 - Format: `{major.minor.iteration}` (e.g., 1.4 → 1.4.1, 1.4.1 → 1.4.2)
-- 3.11 - When ending a feature, consult developer for the feature's major and minor version number for all touched files to current major, and next minor with iteration 0 after consulting with them
+- 3.7 Update the version: When the AI updates a text file it should advance the version (format: n.n, see header.frmt.md)
+- 3.8 During development with each file touched by a step in working/steps.md, increment the 3rd sub-version (e.g., 3.2 → 3.2.1). See header.frmt.md
 
-## 4. Vocabulary
-- When developer referrs to dev branch or the development branch, check with them if they meant the standard gitflow `develop` branch. 
-- When the developer asks to check in, to close, to commit, or to push, unless explicitely told to use the silent commit dyn, use the regular Commit and Push dyn. 
+## 4. Typical spelling mistakes
+- When developer referrs to dev branch check with them if they meant the `develop` branch. 
+- When the developer asks to check in, to close, to commit, or to push, please check if this means to both commit locally and push the code to the gitflow branch on github. In any case use the relevant parts of `/dev/ai/dynamAI/3.CommitAndPush` so that every commit has a projmng item and a comprehensive list of changes, and the item has a comprehensive short list of commits and changes. 
 
 ## 5. Variable notation
 {varname} indicates a variable whose value is either known from projmng.yaml or retrieved through a PowerShell command.
@@ -78,6 +69,11 @@ Examples: {owner} = repo owner from projmng.yaml, {repo} = repository name from 
 
 ── loop per item ──
 ### 7.2 Open Item → dev/ai/dynamAI/2a.OpenItem.md
+   - 7.2.1 Trigger `Start Feature`  if no feature is listed.
+   - 7.2.2 Run `dyanmai/Open Item` with requested item url. 
+          This updates projdev.yaml and steps.md with what should be done.
+   - 7.2.3 Read projdev.yaml. Review item title, steps, and scope with developer.
+   - 7.2.4 Reminder:  Never assume. Never self-confirm.
 
 ### 7.3 Do Steps
    - 7.3.1 Work through steps.md one at a time.
