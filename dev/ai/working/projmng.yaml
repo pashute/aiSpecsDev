@@ -5,225 +5,55 @@
 
 # repo
 project:
-  owner: pashute
-  repo: aiSpecsDev
+  owner:
+  repo:
 
 # project management (github project board)
 projman:
-  num: 5
-  name: aiSpecsDev
-  uid: PVT_kwHOABsSM84BXhNk
-  url: https://github.com/users/pashute/projects/5
-  status_field_uid: PVTSSF_lAHOABsSM84BXhNkzhSth4Q
-  stage_option_uids:
-    backlog: f75ad846
-    ready: 08afe404
-    in_progress: 47fc9ee4
-    in_review: 4cc61d42
-    done: 98236657
+  num:
+  name:
+  uid:
+  url:
 
 # feature (gitflow)
 feature:
-  name: WriteSomeSpecs
-  branch: feature/WriteSomeSpecs
-  item:         # the feature item (parent issue)
-    num: 2
-    title: feature/WriteSomeSpecs
-    url: https://github.com/pashute/aiSpecsDev/issues/2
-    state: open
-    stage: in progress
+  name:
+  branch:
+  item:
+    num:
+    title:
+    url:
+    state:
+    stage:
     milestone: {number: , title: , due: }
 
 # active_item: current item being worked on.
 active_item:
+  num:
+  title:
+  url:
+  state:
+  stage:
+  milestone: {number: , title: , due: }
+  subtasks:
 
 # parent_item: immediate parent. empty if active_item is the feature item itself
 parent_item:
-  num: 3
-  title: NodeJS
-  url: https://github.com/pashute/aiSpecsDev/issues/3 
-
-
+  num:
+  title:
+  url:
+  state:
+  stage:
+  milestone: {number: , title: , due: }
+  steps_progress:
 
 # commits: log of all commits in this feature.
-#   each commit has: hash, headline, details[], filechanges[]
-#     each filechange has: filename, path, changes[]
-#   details and changes are free text lines
-#   example detail:  "line 23. added missing initialization"
-#   example change:  "line 44. removed redundant section"
 commits:
-  - hash: e52ee15
-    headline: Reorganize DynamAI files and update references
-    details:
-      - Created tunes.ai.md with sound effect definitions
-      - Moved 5 action dyn files to dynamai/actions/ folder
-      - Moved 5 helper dyn files to dynamai/helper/ folder
-      - Renamed instructions.md to instructions.dyn.md
-      - Renamed 9 format files from format.{section}.md to {section}.frmt.md
-      - Updated all references to renamed files across codebase
-      - Updated projmng.yaml and vanilla/projmng.yaml filename headers
-      - Updated 1b.EndFeature.dyn.md to use featureEnd.frmt.md for closing remark
-      - Updated 2a.OpenProjdevItem.dyn.md to use itemParams.ai.md when only item number provided
-      - Removed remarks from featureEnd.frmt.md, projectSame.ai.md, itemParams.ai.md
-      - Increased mini versions on all touched dyn files
-      - Created tempReport.md with unused files analysis
-    filechanges: dev/ai/dynamAI/actions/, dev/ai/dynamAI/formats/, dev/ai/dynamAI/helper/, dev/ai/instructions.dyn.md, dev/ai/tunes.ai.md, dev/ai/vanilla/projmng.yaml, dev/ai/working/tempReport.md, dev/ai/working/projmng.yaml, dev/ai/working/steps.md
-  - hash: 6176fac
-    headline: Add confirmation.md with CRITICAL HALT instruction and update dynamAI files
-    details:
-      - Created dev/ai/dynamAI/confirmation.md with explicit CRITICAL HALT INSTRUCTION
-      - Updated 5 dynamAI files (1a, 1b, 2a, 2b, 3) to call confirmation.md for first confirmation
-      - Added second confirmation to 1b.EndFeature.md and 2b.CloseProjdevItem.md after details shown
-      - Reordered steps.md, removed duplicates, marked review steps with V
-      - All files now reference centralized confirmation format
-    filechanges: dev/ai/dynamAI/confirmation.md, dev/ai/dynamAI/1a.StartFeature.md, dev/ai/dynamAI/1b.EndFeature.md, dev/ai/dynamAI/2a.OpenProjdevItem.md, dev/ai/dynamAI/2b.CloseProjdevItem.md, dev/ai/dynamAI/3.CommitAndPush.md, dev/ai/working/steps.md
-  - hash: f5521e1
-    headline: Refine dynamAI confirmation format and stop points
-    details:
-      - Updated format.dynamAI.md to use parameterized confirmation warning
-      - Added first confirmation as stop point in 1a.StartFeature, 1b.EndFeature, 2a.OpenProjdevItem
-      - Updated 3.CommitAndPush to follow developer's response for commit type
-      - Refined step notification format to include dynamAI taskname
-      - Updated versions: format.dynamAI.md 1.6
-    filechanges: dev/ai/dynamAI/1a.StartFeature.md, dev/ai/dynamAI/1b.EndFeature.md, dev/ai/dynamAI/2a.OpenProjdevItem.md, dev/ai/dynamAI/3.CommitAndPush.md, dev/ai/dynamAI/formats/format.dynamAI.md, dev/ai/dynamAI/formats/format.commit.md, dev/ai/working/steps.md, dev/ai/working/ai-draft.md
-  - hash: e374b9d
-    headline: Add confirmation message enhancements to dynamAI workflow
-    details:
-      - Added INTERNAL INSTRUCTION for all main actions (COMMIT, START OF FEATURE, END OF FEATURE, ITEM OPENED, ITEM CLOSED) in format.dynamAI.md
-      - Added STOP!! instruction before 2nd confirmation in 1b.EndFeature.md, 2b.CloseProjdevItem.md, and 3.CommitAndPush.md
-      - Fixed instructions.md to clarify no text should be written after beep
-      - Updated versions: format.dynamAI.md 1.5, 1b.EndFeature.md 0.2.0, 2b.CloseProjdevItem.md 0.2.2, 3.CommitAndPush.md 0.2.1, instructions.md 1.5
-    filechanges: dev/ai/dynamAI/formats/format.dynamAI.md, dev/ai/dynamAI/1b.EndFeature.md, dev/ai/dynamAI/2b.CloseProjdevItem.md, dev/ai/dynamAI/3.CommitAndPush.md, dev/ai/instructions.md, dev/ai/working/steps.md
-  - hash: f85227e
-    headline: Add GitHub issue comment format to CommitAndPush
-    details:
-      - Updated comment step to use GitHub issue comment format from format.dynamAI.md
-      - Added telegraphic summary and question to comment format
-    filechanges: 3.CommitAndPush.md
-  - hash: e34099f
-    headline: Add confirmation question format to all dynamAI files
-    details:
-      - Added confirmation question format to format.dynamAI.md
-      - Updated all dynamAI files (1a, 2a, 1b, 2b, 3) to reference format
-      - Renamed 1b.EndFeature.dynai.md to 1b.EndFeature.md
-      - Updated versions to 0.1.6
-    filechanges: format.dynamAI.md, 1a.StartFeature.md, 2a.OpenProjdevItem.md, 1b.EndFeature.md, 2b.CloseProjdevItem.md, 3.CommitAndPush.md, steps.md
-  - hash: 1a1d898
-    headline: Fix commitAndPush message formatting
-    details:
-      - Formatted verification message with proper markdown code block for better readability
-      - Ensures message displays on separate lines for developer
-    filechanges: 3.CommitAndPush.md, steps.md
-  - hash: c1c4e22
-    headline: feature/WriteSomeSpecs dynamAI refinements and bug fixes
-    details:
-      - Fixed GraphQL fragment spread in itemStage.md getter
-      - Simplified itemStage.md setter using cached stage UIDs
-      - Added verification step to 2b.CloseProjdevItem.md
-      - Improved 3.CommitAndPush.md user prompt formatting
-      - Updated instructions.md to write message before beep
-    filechanges: 2b.CloseProjdevItem.md, 3.CommitAndPush.md, aiCode/itemStage.md, instructions.md, steps.md
-  - hash: 43bfa98
-    headline: feature/WriteSomeSpecs dynamAI workflow refactoring
-    details:
-      - Standardized all dynamAI task files to format.dynamAI.md structure
-      - Added per-step problem handling with On result blocks
-      - Pseudo section provides quick overview of each task
-      - Instruction pointers to shared code and formatting files
-      - Standardized projdev info in yaml
-      - Moved steps.md and projdev.yaml to working/ folder
-      - Added vanilla/ folder for template files
-      - Fixed API errors in aiCode files for proper AI execution
-      - Implemented two-phase commit (work files, then metadata)
-      - Added metadata-only commit detection in all dynamAI tasks
-    filechanges: 1a.StartFeature.md, 1b.EndFeature.dynai.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, 3.CommitAndPush.md, steps.md, instructions.md, formats/format.dynamAI.md, formats/format.header.md, formats/format.steps.md
-  - hash: 89f62ad
-    headline: feature/WriteSomeSpecs working folder and dynamAI refinements
-    details:
-      - Created dev/ai/working/ folder for active files
-      - Moved projdev.yaml, steps.md to working/
-      - Updated all file references to point to working/
-      - Removed unwanted "Project development data at current stage" line
-      - Standardized headers to "## Filename:" and "## Version:" format
-      - Enhanced variable notation section with placeholder syntax note
-      - Added subsection numbers to projdevUpdate.md
-      - Simplified dynamAI files to reference projdevUpdate.md
-    filechanges: 1a.StartFeature.md, 1b.EndFeature.dynai.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, 3.CommitAndPush.md, projdevUpdate.md, instructions.md, vanilla/ai-draft.md, working/, ai-draft.md, projdev.yaml, steps.md
-  - id: b7c67ba
-    headline: feature/WriteSomeSpecs instruction refinements
-    details:
-      - user guide, detailed instructions with verifications tested
-    filechanges: README.md, instructions.md, 1a.StartFeature.md, 2a.OpenProjdevItem.md, 2b.CloseProjdevItem.md, projdev.yaml, steps.md, temp.txt
-        
-  - hash: 2889cc2
-    headline: feature/WriteSomeSpecs bell and accessibility improvements
-    details:
-      - "Added bell sound accessibility instructions"
-      - "Added 3-beep attention notification"
-      - "Updated commit dynamAI with format refactoring"
-      - "Created format files for commit/item/project"
-      - "Created aiCode files for item operations"
-      - "Cleaned up redundant schema files"
-    filechanges: instructions.md, steps.md, 3.CommitAndPush.md, projdevUpdate.md, format.commit.md, format.itemClose.md, format.projdev.md, itemClose.md, itemParams.md, itemState.md, subItemsClosed.md, item.md 
-  - id: 62a3271
-    headline: feature/WriteSomeSpecs commit instruction refactoring
-    details:
-      - "Fixed format.projdev.md to clarify array structure"
-      - "Simplified projdevUpdate.md to reference format.projdev.md"
-      - "Eliminated redundancy between format and instructions"
-    filechanges: format.projdev.md, projdevUpdate.md 
-  - id: ceac471
-    headline: feature/WriteSomeSpecs add here-string format and dynamAI terminology
-    details:
-      - "Created format.hereString.md with PowerShell here-string format specification"
-      - "Updated 2b.CloseProjdevItem.md to reference format.hereString.md"
-      - "Updated README.md to use dynamAI tasks terminology"
-      - "Updated all dynamAI files below 1.0 to version 1.0"
-      - "Cleaned up steps.md after previous commit"
-    filechanges: format.hereString.md, 2b.CloseProjdevItem.md, README.md, steps.md
-      
-  - hash: 87069ed
-    headline: feature/WriteSomeSpecs add completion table and project item comment to commit dynamAI
-    details:
-      - "Added checkbox step parsing to 2a.OpenProjdevItem.md"
-      - "Added checkbox step parsing to 1a.StartFeature.md"
-      - "Updated format.commit.md to include itemsteps field"
-      - "Added completion table step to 3.CommitAndPush.md"
-      - "Added project item comment step to 3.CommitAndPush.md"
-      - "Updated developer confirmations in 3.CommitAndPush.md"
-    filechanges: 2a.OpenProjdevItem.md, 1a.StartFeature.md, format.commit.md, 3.CommitAndPush.md
-
 
 # completed_items: closed items in this feature.
 # each item has: num, title, status, remarks, has_open_subitems, completed_at
+# IMPORTANT: Only include items that are done or deferred
+# has_open_subitems: true if item closed but still has open subitems (partial close)
 completed_items:
-  - num: 10
-    title: fix openClose projman item
-    status: completed
-    remarks: All ad-hoc fixes completed. Files reorganized, references updated, mini versions incremented. Fixed closeItem order to set stage before closing.
-    has_open_subitems: false
-    completed_at: 2026-06-10T04:54:39Z
-  - num: 5
-    title: templates
-    status: completed
-    remarks: Not planned (cancelled)
-    has_open_subitems: false
-    completed_at: 2026-05-30T16:29:03Z
-  - num: 3
-    title: NodeJS
-    status: completed
-    remarks: Partial close - has open subitem 10 (fix openClose projman item). Commits: 7979da7 (Open item 3), 1b9884a (Add automatic partial detection to closeItem and NodeJS server)
-    has_open_subitems: true
-    completed_at: 2026-05-30T16:29:03Z
-  - num: 7
-    title: fix closeItem problem
-    status: completed
-    remarks: Partial close - has open subitem 8 (fix openItem problem). Commits: 43bfa98 (feature/WriteSomeSpecs dynamAI workflow refactoring)
-    has_open_subitems: true
-    completed_at: 2026-05-30T16:29:03Z
-  - num: 8
-    title: fix openItem problem
-    status: completed
-    remarks: Completed. Commits: 6176fac (Add confirmation.md with CRITICAL HALT instruction and update dynamAI files), f5521e1 (Refine dynamAI confirmation format and stop points), e374b9d (Add confirmation message enhancements to dynamAI workflow)
-    has_open_subitems: false
-    completed_at: 2026-05-30T16:29:03Z
+```
+
