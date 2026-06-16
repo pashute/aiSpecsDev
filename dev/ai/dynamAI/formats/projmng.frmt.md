@@ -8,7 +8,7 @@ projman:  # project management details (Github Project)
   num, name, uid, url
 
 feature:
-  name, branch
+  name, version, branch
   item:
     num, title, state, stage, url, milestone: {number, title, due}
 
