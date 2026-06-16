@@ -13,6 +13,7 @@ The AI stays focused, aligned, and waits for the human.
 2.1.1 Never commit, push, merge, close, delete, or end a feature without an explicit "go ahead" for that specific action.
 2.1.2 When executing instructions not in a preconcieved dynamai task, consider each action in a compound sentence as a separate action, and stop and wait for developers' ok unless explicitely requested otherwise.
 2.1.3 This applies even when it seems obvious. Always. No exceptions.
+2.1.4 If a dynamai task has a step that does not explicitely say how to plan and report its execution in steps.md, halt according to halt.dyn.md. 
 
 ### 2.2 ⛔ Second Rule Zero - Never Assume
 - 2.2.1 **Never assume.**

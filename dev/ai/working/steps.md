@@ -341,8 +341,8 @@ On result:
 1.4.1 Check current branch: `git branch --show-current`
 1.4.2 Verify it matches feature.branch from projmng.yaml
 On result:
-- problem: Consult the developer
-- no problem: Close step [v]
+- problem: ERROR: Current branch is feature/UI_StepsConsolidator but projmng.yaml says feature/WriteSomeSpecs. Branch mismatch. Halt and consult developer.
+- no problem: Close step
 
 ### Step 1.5 Switch to develop branch
 1.5.1 Switch to develop branch: `git checkout develop`
